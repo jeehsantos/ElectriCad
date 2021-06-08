@@ -510,18 +510,18 @@ section {
 --------------------------------------------------------------*/
 .about .abouttittle {
   background: #fd1414;
-  padding: 12px 50px;
+  padding: 8px 30px;
   margin-left: 30px;
   border-radius: 24px;
   font-weight: 600;
-  font-size:x-large;
+  font-size:large;
   color: #fff;
 }
 
 .about .abouttittle:hover {
   color: #fff;
   background: #e1444d;
-
+}
 .about {
   padding-bottom: 30px;
 }
@@ -543,30 +543,6 @@ section {
 
 .about .about-content {
   padding: 40px;
-}
-.about .about-btn{
-  font-family: "Raleway", sans-serif;
-  font-weight: 500;
-  font-size: 13px;
-  letter-spacing: 1px;
-  display: inline-block;
-  padding: 8px 30px 9px 30px;
-  border-radius: 250px;
-  transition: 0.5s;
-  margin-top: 30px;
-  color: #fff;
-  background: #fd1414;
-  border: 2px solid #fd1414 ;
-}
-
-.about .content .about-btn i {
-  font-size: 16px;
-  padding-left: 5px;
-}
-
-.about .content .about-btn:hover {
-  background: #fd1414;
-  background: #ee4646;
 }
 
 .about .icon-box + .icon-box {
@@ -596,7 +572,7 @@ section {
 
 .about .icon-box:hover .icon i {
   color: rgb(235, 223, 223);
-}
+} 
 
 .about .icon-box .title {
   margin-left: 95px;
@@ -726,7 +702,7 @@ section {
 --------------------------------------------------------------*/
 .portfolio .portfoliotittle {
   background: #fd1414;
-  padding: 12px 50px;
+  padding: 8px 30px;
   margin-left: 30px;
   border-radius: 24px;
   font-weight: 600;
@@ -928,7 +904,7 @@ Experiences prueba
 -----------------------------------------------*/
 .experiences-clean .experiencestittle {
   background: #fd1414;
-  padding: 12px 50px;
+  padding: 8px 30px;
   margin-left: 30px;
   border-radius: 24px;
   font-weight: 600;
@@ -1045,7 +1021,7 @@ font-size: 32px;
 --------------------------------------------------------------*/
 .contact .contactus {
   background: #fd1414;
-  padding: 12px 50px;
+  padding: 8px 32px;
   margin-left: 30px;
   border-radius: 24px;
   font-weight: 600;
@@ -1061,7 +1037,7 @@ font-size: 32px;
 .contact .info-box {
   color: #444;
   text-align: center;
-  box-shadow: 0 0 30px rgba(16, 207, 207, 0.6);
+  box-shadow: 0 0 30px rgb(159, 179, 180);
   padding: 20px 0 30px 0;
   margin-bottom: 30px;
   width: 100%;
@@ -1152,7 +1128,7 @@ font-size: 32px;
 }
 
 .contact .php-email-form input::focus, .contact .php-email-form textarea::focus {
-  background-color: #428bca;
+  background-color: #ca4b42;
 }
 
 .contact .php-email-form input {
@@ -1164,7 +1140,7 @@ font-size: 32px;
 }
 
 .contact .php-email-form button[type="submit"] {
-  background: #428bca;
+  background:#fd1414 ;
   border: 0;
   padding: 10px 24px;
   color: #fff;
@@ -1172,7 +1148,7 @@ font-size: 32px;
 }
 
 .contact .php-email-form button[type="submit"]:hover {
-  background: #6aa3d5;
+  background: #fd1414;
 }
 
 @-webkit-keyframes animate-loading {
