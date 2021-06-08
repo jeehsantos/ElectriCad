@@ -508,6 +508,20 @@ section {
 /*--------------------------------------------------------------
 # About Us
 --------------------------------------------------------------*/
+.about .abouttittle {
+  background: #fd1414;
+  padding: 12px 50px;
+  margin-left: 30px;
+  border-radius: 24px;
+  font-weight: 600;
+  font-size:x-large;
+  color: #fff;
+}
+
+.about .abouttittle:hover {
+  color: #fff;
+  background: #e1444d;
+
 .about {
   padding-bottom: 30px;
 }
@@ -706,120 +720,6 @@ section {
   }
 }
 
-/*--------------------------------------------------------------
-# About Lists
---------------------------------------------------------------
-.about-lists {
-  padding: 40px;
-}
-
-.about-lists .row {
-  overflow: hidden;
-}
-
-.about-lists .content-item {
-  padding: 40px;
-  border-left: 1px solid #d9e8f4;
-  border-bottom: 1px solid #d9e8f4;
-  margin: -1px;
-}
-
-.about-lists .content-item span {
-  display: block;
-  font-size: 24px;
-  font-weight: 400;
-  color: #eff2f5;
-}
-
-.about-lists .content-item h4 {
-  font-size: 28px;
-  font-weight: 400;
-  padding: 0;
-  margin: 20px 0;
-}
-
-.about-lists .content-item p {
-  color: #aaaaaa;
-  font-size: 15px;
-  margin: 0;
-  padding: 0;
-}
-
-@media (max-width: 768px) {
-  .about-lists .content-item {
-    padding: 40px 0;
-  }
-}
-
-
-
-/*--------------------------------------------------------------
-# Services
---------------------------------------------------------------*/
-.services {
-  padding-bottom: 30px;
-}
-
-.services .icon-box {
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-.services .icon {
-  display: flex;
-  justify-content: center;
-}
-
-.services .icon i {
-  width: 80px;
-  height: 80px;
-  margin-bottom: 20px;
-  background: #fff;
-  border-radius: 50%;
-  transition: 0.5s;
-  color: #428bca;
-  font-size: 40px;
-  overflow: hidden;
-  padding-top: 20px;
-  box-shadow: 0px 0 25px rgba(0, 0, 0, 0.15);
-}
-
-.services .icon-box:hover .icon i {
-  box-shadow: 0px 0 30px rgba(66, 139, 202, 0.5);
-}
-
-.services .title {
-  font-weight: 600;
-  margin-bottom: 15px;
-  font-size: 18px;
-  position: relative;
-  padding-bottom: 15px;
-}
-
-.services .title a {
-  color: #444;
-  transition: 0.3s;
-}
-
-.services .title a:hover {
-  color: #428bca;
-}
-
-.services .title::after {
-  content: '';
-  position: absolute;
-  display: block;
-  width: 50px;
-  height: 2px;
-  background: #428bca;
-  bottom: 0;
-  left: calc(50% - 25px);
-}
-
-.services .description {
-  line-height: 24px;
-  font-size: 14px;
-}
 
 /*--------------------------------------------------------------
 # Portfolio
@@ -1161,7 +1061,7 @@ font-size: 32px;
 .contact .info-box {
   color: #444;
   text-align: center;
-  box-shadow: 0 0 30px rgba(187, 206, 206, 0.6);
+  box-shadow: 0 0 30px rgba(16, 207, 207, 0.6);
   padding: 20px 0 30px 0;
   margin-bottom: 30px;
   width: 100%;
