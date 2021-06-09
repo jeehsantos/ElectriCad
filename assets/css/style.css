@@ -575,6 +575,9 @@ section {
   color: rgb(235, 223, 223);
 } 
 
+.about .icon-box .bi .bi-eye{
+  background-color: #fff;
+}
 .about .icon-box .title {
   margin-left: 95px;
   font-weight: 700;
