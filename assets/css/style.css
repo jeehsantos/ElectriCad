@@ -1229,7 +1229,7 @@ font-size: 32px;
 
 .contact .php-email-form button[type="submit"] {
   background:#fd1414 ;
-  border: 0;
+  border-radius: 1em;
   padding: 10px 24px;
   color: #fff;
   transition: 0.4s;
@@ -1237,6 +1237,7 @@ font-size: 32px;
 
 .contact .php-email-form button[type="submit"]:hover {
   background: #fd1414;
+  border-radius: 2em;
 }
 
 @-webkit-keyframes animate-loading {
@@ -1290,7 +1291,7 @@ font-size: 32px;
   display: center;
   background: #fd1414;
   color: #fff;
-  border: #fd1414:
+  border: #fd1414;
   line-height: 3;
   padding: 15px 5;
   margin-right: 4px;
