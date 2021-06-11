@@ -704,7 +704,7 @@ section {
 .btn-get-started {
   font-family: "Raleway", sans-serif;
   font-weight: 600;
-  font-size: 20px;
+  font-size: large;
   letter-spacing: 2px;
   display: inline-block;
   padding: 8px 30px;
@@ -731,15 +731,14 @@ section {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  width: 80px;
-  height: 80px;
+  width: 100px;
+  height: 100px;
   margin-bottom: 20px;
   background: rgb(253, 20, 20);
   border-radius: 50%;
   transition: 0.5s;
   color: #eaeff3;
-  box-shadow: 0px 0 25px rgba(0, 0, 0, 0.15);
-  overflow: hidden;
+  box-shadow: 0px 0 25px #e1444d;
 }
 
 .services .icon i {
@@ -748,7 +747,7 @@ section {
 }
 
 .services .icon-box:hover .icon {
-  box-shadow: 0px 0 30px #fd1414;
+  box-shadow: 0px 0 30px ;
 }
 
 .services .title {
@@ -1236,8 +1235,8 @@ font-size: 32px;
 }
 
 .contact .php-email-form button[type="submit"]:hover {
-  background: #fd1414;
-  border-radius: 2em;
+  background: #e1444d;
+  border-radius: 1em;
 }
 
 @-webkit-keyframes animate-loading {
