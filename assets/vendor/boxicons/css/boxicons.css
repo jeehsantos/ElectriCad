@@ -1407,6 +1407,9 @@
   .bx-eraser:before {
     content: "\ea26";
   }
+ .bi-eye-fill::before {
+    content: "\f33e"; 
+ }
   .bx-error:before {
     content: "\ea27";
   }
