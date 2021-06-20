@@ -703,22 +703,19 @@ section {
 # Services
 --------------------------------------------------------------*/
 
-.btn-get-started {
-  font-family: "Raleway", sans-serif;
-  font-weight: 600;
-  font-size: 20px;
-  letter-spacing: 2px;
-  display: inline-block;
+.services .servicetittle {
+  background: #fd1414;
   padding: 8px 30px;
+  margin-left: 30px;
   border-radius: 24px;
-  transition: 0.5s;
-  line-height: 1;
-  margin: 10px;
-  color: #fff ;
-  -webkit-animation-delay: 0.8s;
-  animation-delay: 0.8s;
-  border: 0;
-  background: rgb(253, 20, 20);
+  font-weight: 600;
+  font-size:x-large;
+  color: #fff;
+}
+
+.services .servicetittle:hover {
+  color: #fff;
+  background: #e1444d;
 }
 .services {
   padding-bottom: 30px;
@@ -739,7 +736,7 @@ section {
   background: rgb(253, 20, 20);
   border-radius: 50%;
   transition: 0.5s;
-  color: #eaeff3;
+  color:#fff;
   box-shadow: 0px 0 25px rgba(235, 226, 226, 0.15);
   overflow: hidden;
 }
