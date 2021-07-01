@@ -1275,15 +1275,28 @@ font-size: 32px;
   margin-bottom: 35px;
 }
 
-#footer .footer-top .footer-info h3 {
-  font-size: 30px;
-  margin: 20 0 20px 0;
-  padding: 10px 0 10px 0;
-  line-height: 0,5;
-  font-weight: 100;
+
+#footer .logo  {
+  font-size: 28px;
+  margin: 0;
+  padding: 10px 0;
+  line-height: 1;
+  font-weight: 400;
+  letter-spacing: 3px;
+  text-transform: uppercase;
 }
 
+#footer .logo  a, #header .logo  a:hover {
+  color:  #fd1f23;
+  text-decoration: none;
+}
 
+#footer .logo img  {
+  padding: 0;
+  margin: -2% 0% 0% -8% ;
+  width: 25%;
+
+}
 
 #footer .footer-top .social-links a {
   font-size: 35px;
