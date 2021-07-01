@@ -1110,6 +1110,7 @@ font-size: 32px;
   width: 100%;
 }
 
+
 .contact .info-box i {
   font-size: 32px;
   color:#fff;
@@ -1136,6 +1137,20 @@ font-size: 32px;
 .contact .php-email-form {
   box-shadow: 0 0 30px rgb(159, 179, 180);
   padding: 30px;
+}
+
+.contact .forms-control {
+  display: block;
+  width: 100%;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #4b5749;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: .25rem;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
 .contact .php-email-form .validate {
