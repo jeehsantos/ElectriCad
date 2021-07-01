@@ -1139,6 +1139,20 @@ font-size: 32px;
   padding: 30px;
 }
 
+
+.custom-file-input.selected:lang(en)::after {
+  content: "" !important;
+}
+
+.custom-file {
+  overflow: hidden;
+}
+
+.custom-file-input {
+  white-space: nowrap;
+}
+
+
 .contact .forms-control {
   display: block;
   width: 100%;
