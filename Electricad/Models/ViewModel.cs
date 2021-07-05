@@ -9,7 +9,6 @@ namespace Electricad.Models
     public class ViewModel
     {
         public List<Review> Reviews { get; set; }
-        public List<ContactForm> Forms { get; set; }
- 
+        public ContactForm Forms { get; set; }
     }
 }

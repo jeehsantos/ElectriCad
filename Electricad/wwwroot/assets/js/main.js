@@ -216,13 +216,13 @@
   });
 
     //Input file contact 
+    $(window).on('load', function () {
+        document.querySelector('.custom-file-input').addEventListener('change', function (e) {
+            var name = document.getElementById("attachments").files[0].name;
+            var nextSibling = e.target.nextElementSibling
+            nextSibling.innerText = name
+        })
 
-    document.querySelector('.custom-file-input').addEventListener('change', function (e) {
-        var name = document.getElementById("attachments").files[0].name;
-        var nextSibling = e.target.nextElementSibling
-        nextSibling.innerText = name
-    })
-
-    input.style.opacity = 0;
-
+        input.style.opacity = 0;
+    }
 })(jQuery);

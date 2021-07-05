@@ -1,6 +1,7 @@
 ﻿@using Electricad;
-@model IEnumerable<Electricad.Data.Review>
- 
+@model Electricad.Models.ViewModel
+
+
 
 @{
     ViewData["Title"] = "Home Page";
@@ -318,21 +319,29 @@
                     <ul><a href="index.html" class="titlebtn">Experiences</a></ul> <br>
                     <p class="text-center">Our customers love us! Read what they have to say below. Aliquam sed justo ligula. Vestibulum nibh erat, pellentesque ut laoreet vitae.</p>
                 </div>
-
+                
                 <div class="row people">
-                    @foreach (var item in Model)
+                    @if (Model.Reviews != null) {
+                    @foreach (var item in Model.Reviews)
                     {
                         <div class="col-md-6 col-lg-4 item">
                             <div class="box">
-                                <p class="description">"@Html.DisplayFor(modelItem => item.comment)"</p>
+                                <p class="description">"@item.comment"</p>
                             </div>
                             <div class="author">
-                                <h5 class="name">@Html.DisplayFor(modelItem => item.name)</h5>
-                                <p class="title">@Html.DisplayFor(modelItem => item.dateComment)</p>
+                                <h5 class="name">@item.name</h5>
+                                <p class="title">@item.dateComment</p>
                             </div>
                         </div>
                     }
-                </div>
+
+
+                    }
+       
+                    else { 
+                        <div>Nothing to show</div>
+                    }
+            </div>
             </div>
         </div>
     </section>
@@ -374,63 +383,62 @@
                 </div>
 
                 <div class="col-lg-12" data-aos="fade-up" data-aos-delay="300">
-                    <!-- <form method="post" enctype="multipart/form-data" asp-controller="Home" asp-action="Create">
-    <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                    <form method="post" enctype="multipart/form-data" asp-controller="home" asp-action="index">
 
-                    <div class="form-row">
+                        <div class="form-row">
 
-                        <div class="col-lg-6 form-group">
-                            <input type="text" asp-for="Review.Name" class="form-control" id="name" placeholder="Full Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                            <div class="col-lg-6 form-group">
+                                <input type="text" asp-for="Forms.Name" class="form-control" id="name" name="name" data-val="true" data-val-required="teste" placeholder="Full Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                                <div class="validate"></div>
+                                <span class="text-danger field-validation-valid" datavalmsg-for="name" data-valmsg-replace="true"></span>
+                            </div>
+                            <div class="col-lg-6 form-group">
+                                <input type="text" asp-for="Forms.Phone" class="form-control" id="phone" placeholder="Phone number" data-rule="minlen:4" data-msg="Please enter at least 9 chars" />
+                                <div class="validate"></div>
+                            </div>
+                            <div class="col-lg-6 form-group">
+                                <input type="email" class="form-control" asp-for="Forms.Email" id="email" placeholder="Email" data-rule="email" data-msg="Please enter a valid email" />
+                                <div class="validate"></div>
+                            </div>
+                            <div class="col-lg-6 form-group">
+                                <input type="text" asp-for="Forms.Address" class="form-control" id="address" placeholder="Address" data-rule="minlen:4" data-msg="Please enter at least 8 chars" />
+                                <div class="validate"></div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <select type="text" class="form-control" asp-for="Forms.Subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please select at least 1 option of subject">
+                                <option selected>Subject</option>
+                                <option value="1">Make a quote</option>
+                                <option value="2">Leave a comment</option>
+                                <div class="validate"></div>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="attachments" name="attachments" multiple="multiple" aria-describedby="customFileInput">
+                                    <label class="custom-file-label" for="customFileInput">Select file</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" asp-for="Forms.Content" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
                             <div class="validate"></div>
                         </div>
-                        <div class="col-lg-6 form-group">
-                            <input type="text" asp-for="Phone" class="form-control" id="phone" placeholder="Phone number" data-rule="minlen:4" data-msg="Please enter at least 9 chars" />
-                            <div class="validate"></div>
+                        <div class="mb-3">
+                            <div class="loading">Loading</div>
+                            <div class="error-message"></div>
+                            <div class="sent-message">Your message has been sent. Thank you!</div>
                         </div>
-                        <div class="col-lg-6 form-group">
-                            <input type="email" class="form-control" asp-for="Email" id="email" placeholder="Email" data-rule="email" data-msg="Please enter a valid email" />
-                            <div class="validate"></div>
-                        </div>
-                        <div class="col-lg-6 form-group">
-                            <input type="text" asp-for="Address" class="form-control" id="address" placeholder="Address" data-rule="minlen:4" data-msg="Please enter at least 8 chars" />
-                            <div class="validate"></div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <select type="text" class="form-control" asp-for="Subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please select at least 1 option of subject">
-                            <option selected>Subject</option>
-                            <option value="1">Make a quote</option>
-                            <option value="2">Leave a comment</option>
-                            <div class="validate"></div>
-                        </select>
-                    </div>
-                     <div class="form-group">
-                        <div class="input-group">
-                          <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="attachments" name="attachments" multiple="multiple" aria-describedby="customFileInput">
-                        <input type="file" class="custom-file-input" id="customFileInput" multiple aria-describedby="customFileInput">
-
-                        <label class="custom-file-label" for="customFileInput">Select file</label>
-                          </div>
-                        </div>
-                      </div>
-                    <div class="form-group">
-                        <textarea class="form-control" asp-for="Content" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
-                        <div class="validate"></div>
-                    </div>
-                    <div class="mb-3">
-                        <div class="loading">Loading</div>
-                        <div class="error-message"></div>
-                        <div class="sent-message">Your message has been sent. Thank you!</div>
-                    </div>
-                    <div class="text-center"><button type="submit">Send Message</button></div>
+                        <div class="text-center"><button class="submit-button" type="submit">Send Message</button></div>
                     </form>
                 </div>
 
+            </div>
+
         </div>
 
-    </div> -->
-</section>
+    </section>
     <!-- End Contact Us Section -->
     <!-- ====== MessengerChat -->
     <!-- Messenger Chat plugin Code -->

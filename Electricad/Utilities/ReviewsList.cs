@@ -7,12 +7,14 @@ using System.Threading.Tasks;
 
 namespace Electricad.Utilities
 {
-    public class ReviewsList 
+    public class ReviewsList : Review
     {
         private readonly ApplicationDbContext _context;
+        private readonly ContactForm _contact;
         public ReviewsList Review { get; set; }
-        public ReviewsList(ApplicationDbContext context)
+        public ReviewsList(ApplicationDbContext context, ContactForm contact)
         {
+            _contact = contact;
             _context = context;
         }
 

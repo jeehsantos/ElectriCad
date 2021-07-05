@@ -27,6 +27,26 @@ h1, h2, h3, h4, h5, h6, .font-primary {
     font-family: "Raleway", sans-serif;
 }
 
+
+/*lOGIN*/
+/*for Tab control*/
+div.login-logout-tab div.card.header {
+    padding: 0px 0px 12px 0px;
+}
+
+div.login-logout-tab li.nav-tabs {
+    margin: 0px 0px -12px 0px;
+}
+
+div.login-logout-tab li.nav-item {
+    width: 50%
+}
+
+div.login-logout-tab a.nav-link {
+    font-size: 25px;
+    color: #495057;
+    text-align: center;
+}  
 /*--------------------------------------------------------------
 # Back to top button
 --------------------------------------------------------------*/
@@ -1245,7 +1265,7 @@ Experiences
     padding: 12px 15px;
 }
 
-.contact .php-email-form button[type="submit"] {
+.submit-button {
     background: #fd1414;
     border: 0;
     padding: 10px 24px;
@@ -1255,7 +1275,7 @@ Experiences
     transition: 0.4s;
 }
 
-    .contact .php-email-form button[type="submit"]:hover {
+    .submit-button:hover {
         background: #fd1414;
     }
 
