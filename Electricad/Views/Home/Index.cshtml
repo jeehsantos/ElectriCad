@@ -2,9 +2,9 @@
 @model Electricad.Models.ViewModel
 
 
-
 @{
     ViewData["Title"] = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <main id="main">
@@ -19,7 +19,8 @@
                 <div class="carousel-inner" role="listbox">
 
                     <!-- Slide 1 -->
-                    <div class="carousel-item active" style="background-image: url('assets/img/slide/slide-1.1.jpg');">
+                    <div class="carousel-item active" style="background-image: url('assets/img/slide/slide-1.1.jpg');
+    ">
                         <div class="carousel-container">
                             <div class="carousel-content container">
                                 <h2 class="animate__animated animate__fadeInDown">Welcome to <span>Electricad</span></h2>
@@ -319,29 +320,31 @@
                     <ul><a href="index.html" class="titlebtn">Experiences</a></ul> <br>
                     <p class="text-center">Our customers love us! Read what they have to say below. Aliquam sed justo ligula. Vestibulum nibh erat, pellentesque ut laoreet vitae.</p>
                 </div>
-                
+
                 <div class="row people">
-                    @if (Model.Reviews != null) {
-                    @foreach (var item in Model.Reviews)
+                    @if (Model.Reviews != null)
                     {
-                        <div class="col-md-6 col-lg-4 item">
-                            <div class="box">
-                                <p class="description">"@item.comment"</p>
+                        @foreach (var item in Model.Reviews)
+                        {
+                            <div class="col-md-6 col-lg-4 item">
+                                <div class="box">
+                                    <p class="description">"@item.comment"</p>
+                                </div>
+                                <div class="author">
+                                    <h5 class="name">@item.name</h5>
+                                    <p class="title">@item.dateComment</p>
+                                </div>
                             </div>
-                            <div class="author">
-                                <h5 class="name">@item.name</h5>
-                                <p class="title">@item.dateComment</p>
-                            </div>
-                        </div>
-                    }
+                        }
 
 
                     }
-       
-                    else { 
+
+                    else
+                    {
                         <div>Nothing to show</div>
                     }
-            </div>
+                </div>
             </div>
         </div>
     </section>
@@ -388,7 +391,7 @@
                         <div class="form-row">
 
                             <div class="col-lg-6 form-group">
-                                <input type="text" asp-for="Forms.Name" class="form-control" id="name" name="name" data-val="true" data-val-required="teste" placeholder="Full Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                                <input type="text" asp-for="Forms.Name" class="form-control" id="name" data-val="true" data-val-required="teste" placeholder="Full Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
                                 <div class="validate"></div>
                                 <span class="text-danger field-validation-valid" datavalmsg-for="name" data-valmsg-replace="true"></span>
                             </div>

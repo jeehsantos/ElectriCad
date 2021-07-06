@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Oj96IWblJpMulWNrEjqj7dyBJuJ00jnnetFlle0QnyhAr4YyjwgqbGny+1WFecVlxuUe6MyEuYI2btpQkIDxrQ==",
+  "dgSpecHash": "yoktLtUuLRR3dVBi3EXXF/QyZ4V5lh40pnLUUiJ1frcIUtB2RKoVjL7QiriWVSGi3c8bsUJ4CLQkYA64oc73aQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\jeehs\\source\\repos\\Electricad\\Electricad\\Electricad.csproj",
+  "projectFilePath": "C:\\Users\\jeehs\\OneDrive\\Documentos\\GitHub\\ElectriCad\\Electricad\\Electricad.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jeehs\\.nuget\\packages\\bouncycastle.netcore\\1.8.5\\bouncycastle.netcore.1.8.5.nupkg.sha512",
     "C:\\Users\\jeehs\\.nuget\\packages\\google.protobuf\\3.14.0\\google.protobuf.3.14.0.nupkg.sha512",

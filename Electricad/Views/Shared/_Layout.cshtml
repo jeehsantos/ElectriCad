@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Electricad</title>
     <!-- Favicons -->
-    <link rel="shortcut icon" type="image/jpg" href="./assets/img/logo-icon.png" />
+    <link rel="shortcut icon" type="image/jpg" href="assets/img/logo-icon.png" />
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,600,600i,700,700i,900" rel="stylesheet">
 
@@ -22,7 +22,7 @@
     <!-- Template Main CSS File
     <link href="assets/css/style.css" rel="stylesheet">-->
     <!--<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />-->
-    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
 
@@ -99,7 +99,7 @@
                                 <a href="#experiences"><h4>Experiences</h4></a>
                             </div>
                             <div class="col-lg- col-md-2 footer-links">
-                                <a href="#contact"><h4>Contact Us</h4></a>
+                                <a href="#contact"><h4">Contact Us</h4></a>
                             </div>
                         </div>
                     </div>
@@ -111,7 +111,8 @@
                 &copy; Copyright <strong><span>Aspire2</span></strong>. All Rights Reserved
             </div>
             <div class="credits">
-                Designed by <a href="#">the crew</a><partial name="_LoginPartial" />
+                Designed by <a href="#">the crew</a>
+                @await Html.PartialAsync("_LoginPartial.cshtml")
             </div>
         </div>
     </footer><!-- End Footer -->

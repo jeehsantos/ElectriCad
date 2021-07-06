@@ -224,5 +224,6 @@
         })
 
         input.style.opacity = 0;
-    }
+    });
+
 })(jQuery);

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jeehs\\source\\repos\\Electricad\\Electricad\\Electricad.csproj": {}
+    "C:\\Users\\jeehs\\OneDrive\\Documentos\\GitHub\\ElectriCad\\Electricad\\Electricad.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jeehs\\source\\repos\\Electricad\\Electricad\\Electricad.csproj": {
+    "C:\\Users\\jeehs\\OneDrive\\Documentos\\GitHub\\ElectriCad\\Electricad\\Electricad.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jeehs\\source\\repos\\Electricad\\Electricad\\Electricad.csproj",
+        "projectUniqueName": "C:\\Users\\jeehs\\OneDrive\\Documentos\\GitHub\\ElectriCad\\Electricad\\Electricad.csproj",
         "projectName": "Electricad",
-        "projectPath": "C:\\Users\\jeehs\\source\\repos\\Electricad\\Electricad\\Electricad.csproj",
+        "projectPath": "C:\\Users\\jeehs\\OneDrive\\Documentos\\GitHub\\ElectriCad\\Electricad\\Electricad.csproj",
         "packagesPath": "C:\\Users\\jeehs\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jeehs\\source\\repos\\Electricad\\Electricad\\obj\\",
+        "outputPath": "C:\\Users\\jeehs\\OneDrive\\Documentos\\GitHub\\ElectriCad\\Electricad\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\jeehs\\AppData\\Roaming\\NuGet\\NuGet.Config",
