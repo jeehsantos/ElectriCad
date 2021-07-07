@@ -15,44 +15,24 @@ namespace Electricad.Controllers
     [Area("Admin")]
     public class OffersController : Controller
     {
-        private readonly ApplicationDbContext _context;
+        //private readonly ApplicationDbContext _context;
         private readonly IWorkContent _workContent;
         private readonly IWebHostEnvironment _hostingEnvironment;
-        public OffersController(ApplicationDbContext context, IWebHostEnvironment hostingEnvironment, IWorkContent workContent)
+        public OffersController( IWebHostEnvironment hostingEnvironment, IWorkContent workContent)
         {
             _hostingEnvironment = hostingEnvironment;
             _workContent = workContent;
-            _context = context;
+            //_context = context;
         }
 
         // GET: Offers
-        /* public async Task<IActionResult> Index()
-         {
-             return View(await _context.tb_offers.ToListAsync());
-        }*/
+      
         [HttpGet]
         public IActionResult Index()
         {
             return View();
         } 
 
-        // GET: Offers/Details/5
-        public async Task<IActionResult> Details(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var offers = await _context.tb_offers
-                .FirstOrDefaultAsync(m => m.id == id);
-            if (offers == null)
-            {
-                return NotFound();
-            }
-
-            return View(offers);
-        }
 
         // GET: Offers/Create se nao esta comentado o codigo e porque estava igual o outro
         public IActionResult Create()
@@ -89,21 +69,8 @@ namespace Electricad.Controllers
                 return RedirectToAction(nameof(Index));
 
             }
-            return View();
+            return RedirectToAction(nameof(Index));
         }
-
-        /*[HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("id,descount,offer_file,desc")] Offers offers)
-        {
-            if (ModelState.IsValid)
-            {
-                _context.Add(offers);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            return View(offers);
-        }*/
 
         // GET: Offers/Edit/5
         [HttpGet]
@@ -172,11 +139,7 @@ namespace Electricad.Controllers
             return View();
         }
  
-        private bool OffersExists(int id)
-        {
-            return _context.tb_offers.Any(e => e.id == id);
-        }
-
+      
         #region LLAMADAS A LA API
         [HttpGet]
         public IActionResult GetAll()

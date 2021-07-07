@@ -10,6 +10,7 @@ namespace Electricad.Areas.Identity.Repository
        /// ICategoriaRepository Categoria { get; }
     //IArticuloRepository Articulo { get; }
     IOffersRepository Offers { get; }
+    IAboutRepository About { get; }
 
     void Save();
     }

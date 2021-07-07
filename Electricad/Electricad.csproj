@@ -29,6 +29,7 @@
 
   <ItemGroup>
     <Folder Include="Repository\" />
+    <Folder Include="wwwroot\Uploads\about\" />
     <Folder Include="wwwroot\Uploads\sliders\" />
   </ItemGroup>
 

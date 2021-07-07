@@ -81,7 +81,12 @@ namespace Electricad
                 endpoints.MapAreaControllerRoute(
                    name: "AdminArea",
                    areaName: "Admin",
-                   pattern: "{controller=Home}/{action=Index}/{id?}");
+                   pattern: "{controller=Offers}/{action=Index}/{id?}");
+
+                endpoints.MapAreaControllerRoute(
+                  name: "AdminArea",
+                  areaName: "Admin",
+                  pattern: "{controller=About}/{action=Details}/{id?}");
             });
         }
     }

@@ -25,7 +25,7 @@ function cargarDatatable() {
                 "data": "id",
                 "render": function (data) {
                     return `<div class="text-center">
-                            <a href='/Offers/Edit/${data}' class='btn btn-success text-white' style='cursor:pointer; width:100px;'>
+                            <a href='/Offers/Edit/${data}' class='btn btn-info text-white' style='cursor:pointer; width:100px;'>
                             <i class='fas fa-edit'></i> Edit
                             </a>
                             &nbsp;
@@ -69,4 +69,8 @@ function Delete(url) {
         });
     }); 
 } 
- 
+
+function myFunction() {
+    document.getElementById("myFile").required = true;
+    document.getElementById("demo").innerHTML = "The required property was set. A file in the file upload field must now be filled out before submitting the form.";
+}

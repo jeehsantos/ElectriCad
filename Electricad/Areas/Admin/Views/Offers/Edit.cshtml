@@ -5,9 +5,9 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
+ 
 <br />
-<br />
-<h3 class="text-center">Editar articulo</h3>
+<h3 class="text-center">Edit Offer</h3>
 <form method="post" asp-action="Edit" enctype="multipart/form-data">
     <input type="hidden" asp-for="id" />
     <div class="row" px-2 mx-2 border>
@@ -34,6 +34,7 @@
             </div>
 
              
+
             <div class="form-group row">
                 <div class="col-4">
                     <label asp-for="offer_file"></label>
@@ -47,12 +48,12 @@
                 <div class="col-8 offset-4">
                     <div class="row">
                         <div class="col">
-                            <button type="submit" class="btn btn-primary form-control" asp-route-id="@Model.id">Update</button>
+                            <button type="submit" class="btn btn-danger form-control" asp-route-id="@Model.id">Update</button>
 
                         </div>
 
                         <div class="col">
-                            <a asp-action="Index" class="btn btn-success form-control">Volver a lista</a>
+                            <a asp-action="Index" class="btn btn-success form-control">Return</a>
                         </div>
                     </div>
                 </div>
@@ -63,8 +64,4 @@
         </div>
     </div>
 </form>
-
-@section Scripts{
-
-}
 
