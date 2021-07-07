@@ -28,9 +28,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Areas\Identity\Repository\" />
     <Folder Include="Repository\" />
-    <Folder Include="wwwroot\Uploads\" />
+    <Folder Include="wwwroot\Uploads\sliders\" />
   </ItemGroup>
 
 </Project>

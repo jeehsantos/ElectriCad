@@ -1,3 +1,5 @@
+using Electricad.Areas.Identity;
+using Electricad.Areas.Identity.Repository;
 using Electricad.Data;
 using Electricad.Models;
 using Electricad.Utilities;
@@ -42,6 +44,7 @@ namespace Electricad
             services.AddScoped<ReviewsList>();
             services.AddScoped<ContactForm>();
             services.AddScoped<SeedingService>();
+            services.AddScoped<IWorkContent, WorkContent>();
             services.AddRazorPages();
         }
 

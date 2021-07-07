@@ -10,43 +10,57 @@
     <!-- Bootstrap core CSS -->
     <link href="~/Admin/css/bootstrap.min.css" rel="stylesheet">
     <link href="~/Admin/css/style.css" rel="stylesheet">
+    
+    <!--Plugins -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" />
+
     <script src="http://cdn.ckeditor.com/4.6.1/standard/ckeditor.js"></script>
 </head>
 <body>
 
+    
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
 
-    <nav class="navbar navbar-default">
-        <div class="container">
-            <div class="navbar-header">
+                    <a class="navbar-brand" href="#">Electricad</a>
+                </div>
+                <div id="navbar" class="collapse navbar-collapse">
 
-                <a class="navbar-brand" href="#">Electricad</a>
+                    <ul class="nav navbar-nav navbar-right">
+                        <a class="btn flex-column btn-danger" href="login.html">LOGOUT</a>
+
+
+                    </ul>
+                </div>
             </div>
-            <div id="navbar" class="collapse navbar-collapse">
-
-                <ul class="nav navbar-nav navbar-right">
-                    <a class="btn btn-danger" href="login.html">LOGOUT</a></td>
-                    </tr>
-
-                </ul>
-            </div>
-        </div>
-    </nav>
+        </nav>
+    
 
     <hr class="my-6">
-
-    <main role="main" class="pb-3">
-        @RenderBody()
-    </main>
-
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
 
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
- 
-@await RenderSectionAsync("Scripts", required: false)
-           
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.serializeJSON/2.9.0/jquery.serializejson.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+    <script src="https://kit.fontawesome.com/0f48d8c00d.js" crossorigin="anonymous"></script>
+    <script src="/Admin/js/bootstrap.min.js"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+
 </body>
 </html>
