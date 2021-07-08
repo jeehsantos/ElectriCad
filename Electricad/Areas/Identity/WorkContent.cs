@@ -19,13 +19,14 @@ namespace Electricad.Areas.Identity
        // Categoria = new CategoriaRepository(_db);
         About = new AboutRepository(_db);
         Offers = new OffersRepository(_db);
+        Portfolio = new PortfolioRepository(_db);
 
 
     }
     //public ICategoriaRepository Categoria { get; private set; }
     public IAboutRepository About { get; private set; }
     public IOffersRepository Offers { get; private set; }
-
+    public IPortfolioRepository Portfolio { get; private set; }
     public void Dispose()
     {
         _db.Dispose();

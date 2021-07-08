@@ -14,7 +14,7 @@ namespace Electricad.Data
       
         public int id { get; set; }
         public string desc { get; set; }
-        public ICollection<Portifolio> Portifolios { get; set; } = new List<Portifolio>();
+        public ICollection<Portfolio> Portfolios { get; set; } = new List<Portfolio>();
 
         public Sectors()
         {

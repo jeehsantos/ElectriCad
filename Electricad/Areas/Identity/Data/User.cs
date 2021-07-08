@@ -17,7 +17,7 @@ namespace Electricad.Data
          
         public About About { get; set; }
         public ICollection<Offers> Offers { get; set; } = new List<Offers>();
-        public ICollection<Portifolio> Portifolios { get; set; } = new List<Portifolio>();
+        public ICollection<Portfolio> Portifolios { get; set; } = new List<Portfolio>();
 
       public User()
         {

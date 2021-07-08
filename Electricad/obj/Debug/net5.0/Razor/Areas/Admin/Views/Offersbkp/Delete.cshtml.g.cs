@@ -34,14 +34,21 @@ using Electricad.Areas.Identity.Pages;
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "C:\Users\jeehs\OneDrive\Documentos\GitHub\ElectriCad\Electricad\Areas\Admin\Views\_ViewImports.cshtml"
+#line 4 "C:\Users\jeehs\OneDrive\Documentos\GitHub\ElectriCad\Electricad\Areas\Admin\Views\_ViewImports.cshtml"
+using Electricad.Models;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 6 "C:\Users\jeehs\OneDrive\Documentos\GitHub\ElectriCad\Electricad\Areas\Admin\Views\_ViewImports.cshtml"
 using Electricad.Data;
 
 #line default
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"5a293012a6eb57682930a0e43ab7492f701483ff", @"/Areas/Admin/Views/Offersbkp/Delete.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"b097906f58ae8850f0bfad42dcff7aee52697cef", @"/Areas/Admin/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"a3bcb91fb9839a54fc64017a033c1a3a5671ba43", @"/Areas/Admin/Views/_ViewImports.cshtml")]
     public class Areas_Admin_Views_Offersbkp_Delete : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<Electricad.Data.Offers>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("type", "hidden", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -133,9 +140,9 @@ using Electricad.Data;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n        </dd>\r\n    </dl>\r\n    \r\n    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5a293012a6eb57682930a0e43ab7492f701483ff7553", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5a293012a6eb57682930a0e43ab7492f701483ff7761", async() => {
                 WriteLiteral("\r\n        ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "5a293012a6eb57682930a0e43ab7492f701483ff7819", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "5a293012a6eb57682930a0e43ab7492f701483ff8027", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
@@ -158,7 +165,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n        <input type=\"submit\" value=\"Delete\" class=\"btn btn-danger\" /> |\r\n        ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5a293012a6eb57682930a0e43ab7492f701483ff9631", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5a293012a6eb57682930a0e43ab7492f701483ff9839", async() => {
                     WriteLiteral("Back to List");
                 }
                 );

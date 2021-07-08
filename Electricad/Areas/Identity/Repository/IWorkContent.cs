@@ -11,6 +11,7 @@ namespace Electricad.Areas.Identity.Repository
     //IArticuloRepository Articulo { get; }
     IOffersRepository Offers { get; }
     IAboutRepository About { get; }
+    IPortfolioRepository Portfolio { get; }
 
     void Save();
     }

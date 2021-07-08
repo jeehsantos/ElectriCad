@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Favicons -->
+    <link rel="shortcut icon" type="image/jpg" href="./assets/img/logo-icon.png" />
+    <!-- Bootstrap core CSS -->
+    <link href="../../../../wwwroot/Admin/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../../../wwwroot/Admin/css/style.css" rel="stylesheet">
+    
+    <!--Plugins -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" />
+
+    <script src="http://cdn.ckeditor.com/4.6.1/standard/ckeditor.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-default">
+            <div class="container ">
+                <div class="navbar-header ">
+                    <a class="navbar-brand" href="#">Electricad</a>
+                </div>
+                <div id="navbar" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <a class="btn btn-danger" href="login.html">LOGOUT</a>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <h2>Offers</h2>
+    <div class="col-6 text-right">
+        <a asp-action="Create" class="btn btn-danger" style="margin-bottom: 15px;"><i class="fas fa-plus"></i> Create a new Offer</a>
+    </div>
+    <div class="container">
+        <main role="main" class="pb-3">
+            
+            <h3 class="text-center">Edit Offer</h3>
+           
+            <form method="post" asp-action="Edit" enctype="multipart/form-data">
+                
+                <input type="hidden" asp-for="id" />
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-2">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="col-8 mt-4">
+                        <div class="form-group row">
+                            <div class="col-4">
+                                <label asp-for="descount"></label>
+                            </div>
+                            <div class="col-8">
+                                <input asp-for="descount" class="form-control" />
+                                <span asp-validation-for="descount" class="text-danger"></span>
+                            </div>
+                        </div>
+            
+                        <div class="form-group row">
+                            <div class="col-4">
+                                <label asp-for="desc"></label>
+                            </div>
+                            <div class="col-8">
+                                <textarea asp-for="desc" class="form-control" style="height: 300px;"></textarea>
+                                <span asp-validation-for="desc" class="text-danger"></span>
+                            </div>
+                        </div>
+            
+                         
+            
+                        <div class="form-group row">
+                            <div class="col-4">
+                                <label asp-for="offer_file"></label>
+                            </div>
+                            <div class="col-8">
+                                <input type="file" name="archivos" id="subidaArchivo" class="form-control" />
+                            </div>
+                        </div>
+            
+                        <div class="form-group row">
+                            
+                            <div class="col-md-8 col-md-offset-2 text-center">
+                                <button type="submit" class="btn btn-primary btn-lg" asp-route-id="@Model.id">Create</button>
+                                <a asp-area="Admin" asp-controller="Offers" asp-action="Index" class="btn btn-success btn-lg" style="margin-left: 30%">Return</a>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="col-md-4"> 
+                        <img src="@Model.offer_file" width="70%" height="50%" style="border-radius: 5px; border: 1px solid #bbb9b9;" />
+                    </div> 
+                     
+                </div>
+            </form>
+            
+             
+        </main>
+    </div>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.serializeJSON/2.9.0/jquery.serializejson.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+    <script src="https://kit.fontawesome.com/0f48d8c00d.js" crossorigin="anonymous"></script>
+    <script src="/Admin/js/bootstrap.min.js"></script>
+ 
+
+</body>
+<script>
+    CKEDITOR.replace('editor1');
+</script>
+</html>

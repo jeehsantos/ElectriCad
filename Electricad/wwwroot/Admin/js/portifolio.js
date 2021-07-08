@@ -7,9 +7,9 @@ $(document).ready(function () {
  
 function cargarDatatable() {
    
-    dataTable = $("#tblSliders").DataTable({
+    dataTable = $("#tblPortfolio").DataTable({
         "ajax": {
-            "url": "Offers/GetAll",
+            "url": "Portfolio/GetAll",
             "type": "GET",
             "datatype": "json"
         },
@@ -26,11 +26,11 @@ function cargarDatatable() {
                 "data": "id",
                 "render": function (data) {
                     return `<div class="text-center">
-                            <a href='/Offers/Edit/${data}' class='btn btn-info text-white' style='cursor:pointer; width:100px;'>
+                            <a href='/Portfolio/Edit/${data}' class='btn btn-info text-white' style='cursor:pointer; width:100px;'>
                             <i class='fas fa-edit'></i> Edit
                             </a>
                             &nbsp;
-                            <a onclick=Delete("/Offers/Delete/${data}") class='btn btn-danger text-white' style='cursor:pointer; width:100px;'>
+                            <a onclick=Delete("/Portfolio/Delete/${data}") class='btn btn-danger text-white' style='cursor:pointer; width:100px;'>
                             <i class='fas fa-trash-alt'></i> Delete
                             </a>
                             `;

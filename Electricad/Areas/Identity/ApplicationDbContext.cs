@@ -18,7 +18,7 @@ namespace Electricad.Data
         public DbSet<Review> tb_reviews { get; set; }
         public DbSet<About> tb_about { get; set; }
         public DbSet<Offers> tb_offers { get; set; }
-        public DbSet<Portifolio> tb_portifolio { get; set; }
+        public DbSet<Portfolio> tb_portifolio { get; set; }
         public DbSet<Sectors> tb_sectors { get; set; }
 
 

@@ -1,11 +1,10 @@
-﻿@model Electricad.Data.Offers
-
+﻿@model Electricad.Data.Portfolio
 @{
     ViewData["Title"] = "Create";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h3 class="text-center">Create a new Slider</h3>
+<h3 class="text-center">Add a new image</h3>
 
 <div class="container-fluid">
     <form method="post" asp-action="Create" enctype="multipart/form-data">
@@ -16,26 +15,19 @@
             <div class="col-sm-7 col-md-offset-3">
                 <div class="form-group row">
                     <div class="col-4">
-                        <label asp-for="descount"></label>
+                        <label asp-for="id"></label>
                     </div>
                     <div class="col-8">
-                        <input type="number" min="1" max="99" maxlength="4" asp-for="descount" class="form-control" />
-                        <span asp-validation-for="descount" class="text-danger"></span>
+
+                        <input type="number" min="1" max="99" maxlength="4" asp-for="id" class="form-control" />
+
+                        <span asp-validation-for="id" class="text-danger"></span>
                     </div>
                 </div>
 
                 <div class="form-group row">
                     <div class="col-4">
-                        <label asp-for="desc"></label>
-                    </div>
-                    <div class="col-8">
-                        <textarea name="editor" id="editor" asp-for="desc" class="form-control" style="height: 300px;"></textarea>
-                        <span asp-validation-for="desc" class="text-danger"></span>
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <div class="col-4">
-                        <label asp-for="offer_file"></label>
+                        <label asp-for="port_file"></label>
                     </div>
                     <div class="col-8">
                         <input type="file" name="archivos" required="required" id="subidaArchivo" class="form-control" />

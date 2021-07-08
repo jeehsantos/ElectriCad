@@ -34,14 +34,21 @@ using Electricad.Areas.Identity.Pages;
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "C:\Users\jeehs\OneDrive\Documentos\GitHub\ElectriCad\Electricad\Areas\Admin\Views\_ViewImports.cshtml"
+#line 4 "C:\Users\jeehs\OneDrive\Documentos\GitHub\ElectriCad\Electricad\Areas\Admin\Views\_ViewImports.cshtml"
+using Electricad.Models;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 6 "C:\Users\jeehs\OneDrive\Documentos\GitHub\ElectriCad\Electricad\Areas\Admin\Views\_ViewImports.cshtml"
 using Electricad.Data;
 
 #line default
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"aff0515d329e47b369a6807275b6099b2f1e9861", @"/Areas/Admin/Views/Offersbkp/Details.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"b097906f58ae8850f0bfad42dcff7aee52697cef", @"/Areas/Admin/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"a3bcb91fb9839a54fc64017a033c1a3a5671ba43", @"/Areas/Admin/Views/_ViewImports.cshtml")]
     public class Areas_Admin_Views_Offersbkp_Details : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<Electricad.Data.Offers>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-action", "Edit", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -129,7 +136,7 @@ using Electricad.Data;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n        </dd>\r\n    </dl>\r\n</div>\r\n<div>\r\n    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "aff0515d329e47b369a6807275b6099b2f1e98616819", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "aff0515d329e47b369a6807275b6099b2f1e98617027", async() => {
                 WriteLiteral("Edit");
             }
             );
@@ -160,7 +167,7 @@ using Electricad.Data;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral(" |\r\n    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "aff0515d329e47b369a6807275b6099b2f1e98618988", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "aff0515d329e47b369a6807275b6099b2f1e98619196", async() => {
                 WriteLiteral("Back to List");
             }
             );

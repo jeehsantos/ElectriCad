@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Electricad.Data
 {
-    public class Portifolio  
+    public class Portfolio  
     {
 
         [Key]
@@ -12,14 +12,15 @@ namespace Electricad.Data
         public string port_file { get; set; }
         [ForeignKey("sector_id")]
         public User User { get; set; }
-        public ICollection<Sectors> Sectors { get; set; } = new List<Sectors>();
+       public Sectors Sector { get; set; }
+        public int SectorsId { get; set; }
 
-        public Portifolio()
+        public Portfolio()
         {
 
         }
 
-        public Portifolio(int id, string port_file)
+        public Portfolio(int id, string port_file)
         {
             this.id = id;
             this.port_file = port_file;

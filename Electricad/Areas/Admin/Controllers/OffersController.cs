@@ -140,7 +140,7 @@ namespace Electricad.Controllers
         }
  
       
-        #region LLAMADAS A LA API
+        #region CALLING THE API
         [HttpGet]
         public IActionResult GetAll()
         {
@@ -159,7 +159,7 @@ namespace Electricad.Controllers
             }
             _workContent.Offers.Remove(objFromDb);
             _workContent.Save();
-            return Json(new { success = true, message = "Image deleted !" });
+            return Json(new { success = true, message = "Image deleted successfully !" });
         }
         #endregion
     }

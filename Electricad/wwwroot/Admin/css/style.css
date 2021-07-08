@@ -1,3 +1,11 @@
+*{
+  padding: 0;
+  margin: 0;
+  vertical-align: baseline;
+  list-style: none;
+  border: 0;
+}
+
 body{
   background:#f4f4f4a1;
 }
@@ -139,5 +147,9 @@ body{
   .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
     color: #ffbbbc;
     background-color: #fd1414;
+    
+  }
+  #teste{
+    margin: 17% auto;
   }
 }

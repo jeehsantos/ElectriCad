@@ -351,6 +351,8 @@ C:\Users\jeehs\OneDrive\Documentos\GitHub\ElectriCad\Electricad\obj\Debug\net5.0
 C:\Users\jeehs\OneDrive\Documentos\GitHub\ElectriCad\Electricad\obj\Debug\net5.0\Razor\Areas\Admin\Views\Offers\Create.cshtml.g.cs
 C:\Users\jeehs\OneDrive\Documentos\GitHub\ElectriCad\Electricad\obj\Debug\net5.0\Razor\Areas\Admin\Views\Offers\Edit.cshtml.g.cs
 C:\Users\jeehs\OneDrive\Documentos\GitHub\ElectriCad\Electricad\obj\Debug\net5.0\Razor\Areas\Admin\Views\Offers\Index.cshtml.g.cs
+C:\Users\jeehs\OneDrive\Documentos\GitHub\ElectriCad\Electricad\obj\Debug\net5.0\Razor\Areas\Admin\Views\Portfolio\Create.cshtml.g.cs
+C:\Users\jeehs\OneDrive\Documentos\GitHub\ElectriCad\Electricad\obj\Debug\net5.0\Razor\Areas\Admin\Views\Portfolio\Index.cshtml.g.cs
 C:\Users\jeehs\OneDrive\Documentos\GitHub\ElectriCad\Electricad\obj\Debug\net5.0\Razor\Areas\Admin\Views\Shared\Error.cshtml.g.cs
 C:\Users\jeehs\OneDrive\Documentos\GitHub\ElectriCad\Electricad\obj\Debug\net5.0\Razor\Areas\Admin\Views\Shared\_Layout.cshtml.g.cs
 C:\Users\jeehs\OneDrive\Documentos\GitHub\ElectriCad\Electricad\obj\Debug\net5.0\Razor\Areas\Admin\Views\Shared\_LoginPartial.cshtml.g.cs
@@ -378,4 +380,3 @@ C:\Users\jeehs\OneDrive\Documentos\GitHub\ElectriCad\Electricad\obj\Debug\net5.0
 C:\Users\jeehs\OneDrive\Documentos\GitHub\ElectriCad\Electricad\obj\Debug\net5.0\ref\Electricad.dll
 C:\Users\jeehs\OneDrive\Documentos\GitHub\ElectriCad\Electricad\obj\Debug\net5.0\Electricad.pdb
 C:\Users\jeehs\OneDrive\Documentos\GitHub\ElectriCad\Electricad\obj\Debug\net5.0\Electricad.genruntimeconfig.cache
-C:\Users\jeehs\OneDrive\Documentos\GitHub\ElectriCad\Electricad\obj\Debug\net5.0\Electricad.csprojAssemblyReference.cache
