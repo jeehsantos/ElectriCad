@@ -16,6 +16,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Mail;
+using System.Reactive;
 using System.Threading.Tasks;
 
 
@@ -50,6 +51,7 @@ namespace Electricad.Controllers
             var z = new ViewModel();
             z.Forms = new ContactForm();
             z.Reviews = db.tb_reviews.ToList();
+            z.Offers = db.tb_offers.ToList();
             return View(z);
         }
 
@@ -72,6 +74,7 @@ namespace Electricad.Controllers
                     m.Forms = new ContactForm();
                     m.Reviews = db.tb_reviews.ToList();
                     ModelState.Clear();
+                    TempData["Msg"] = "Review sent successfully";
                     return View(m);
                 }
             }
@@ -103,7 +106,7 @@ namespace Electricad.Controllers
                     b.Forms = new ContactForm();
                     b.Reviews = db.tb_reviews.ToList();
                     ModelState.Clear();
-
+                    TempData["Msg"] = "Email sent successfully";
                     return View(b);
                 }
                 else

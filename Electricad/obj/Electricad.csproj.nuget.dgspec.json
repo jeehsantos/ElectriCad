@@ -77,6 +77,10 @@
             "SendGrid": {
               "target": "Package",
               "version": "[9.24.0, )"
+            },
+            "System.Reactive": {
+              "target": "Package",
+              "version": "[5.0.0, )"
             }
           },
           "imports": [

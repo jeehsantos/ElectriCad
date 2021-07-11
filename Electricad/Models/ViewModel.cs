@@ -9,6 +9,8 @@ namespace Electricad.Models
     public class ViewModel
     {
         public List<Portfolio> Portfolio { get; set; }
+        public List<About> About { get; set; }
+        public List<Offers> Offers { get; set; }
         public List<User> Users { get; set; }
         public List<Review> Reviews { get; set; }
         public ContactForm Forms { get; set; }

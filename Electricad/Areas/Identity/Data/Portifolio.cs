@@ -12,7 +12,7 @@ namespace Electricad.Data
         public string port_file { get; set; }
         [ForeignKey("sector_id")]
         public User User { get; set; }
-       public Sectors Sector { get; set; }
+        public Sectors Sector { get; set; }
         public int SectorsId { get; set; }
 
         public Portfolio()

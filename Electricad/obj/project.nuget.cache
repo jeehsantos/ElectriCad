@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "yoktLtUuLRR3dVBi3EXXF/QyZ4V5lh40pnLUUiJ1frcIUtB2RKoVjL7QiriWVSGi3c8bsUJ4CLQkYA64oc73aQ==",
+  "dgSpecHash": "WwdqyD6wY7Yc2tgrpl6rhouv1A3EJUHBrJ9lZy5+tOvQpyODwg1YqHStRTec1hemguGUU9LUQT7ORz7UNtKMDQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\jeehs\\OneDrive\\Documentos\\GitHub\\ElectriCad\\Electricad\\Electricad.csproj",
   "expectedPackageFiles": [
@@ -109,6 +109,7 @@
     "C:\\Users\\jeehs\\.nuget\\packages\\system.objectmodel\\4.3.0\\system.objectmodel.4.3.0.nupkg.sha512",
     "C:\\Users\\jeehs\\.nuget\\packages\\system.private.datacontractserialization\\4.3.0\\system.private.datacontractserialization.4.3.0.nupkg.sha512",
     "C:\\Users\\jeehs\\.nuget\\packages\\system.private.uri\\4.3.2\\system.private.uri.4.3.2.nupkg.sha512",
+    "C:\\Users\\jeehs\\.nuget\\packages\\system.reactive\\5.0.0\\system.reactive.5.0.0.nupkg.sha512",
     "C:\\Users\\jeehs\\.nuget\\packages\\system.reflection\\4.3.0\\system.reflection.4.3.0.nupkg.sha512",
     "C:\\Users\\jeehs\\.nuget\\packages\\system.reflection.emit\\4.3.0\\system.reflection.emit.4.3.0.nupkg.sha512",
     "C:\\Users\\jeehs\\.nuget\\packages\\system.reflection.emit.ilgeneration\\4.3.0\\system.reflection.emit.ilgeneration.4.3.0.nupkg.sha512",

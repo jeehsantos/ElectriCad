@@ -61,7 +61,7 @@ namespace Electricad.Controllers
                 {
                     archivos[0].CopyTo(fileStreams);
                 }
-                Offers.offer_file = @"\Uploads\sliders\" + nombreArchivo + extension;
+                Offers.offer_file = @"/Uploads/sliders/" + nombreArchivo + extension;
 
                 _workContent.Offers.Add(Offers);
                 _workContent.Save();
@@ -118,7 +118,7 @@ namespace Electricad.Controllers
                     {
                         archivos[0].CopyTo(fileStreams);
                     }
-                    offers.offer_file = @"\Uploads\sliders\" + fileName + newExtension;
+                    offers.offer_file = @"/Uploads/sliders/" + fileName + newExtension;
 
                     _workContent.Offers.Update(offers);
                     _workContent.Save();
