@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 using Electricad.Data;
@@ -23,7 +24,7 @@ namespace Electricad.Data
         [Display(Name = "Slider Name")]
         public string desc { get; set; }
         public User User { get; set; }
-
+       
         public Offers()
         {
 

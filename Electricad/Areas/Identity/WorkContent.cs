@@ -20,7 +20,7 @@ namespace Electricad.Areas.Identity
         About = new AboutRepository(_db);
         Offers = new OffersRepository(_db);
         Portfolio = new PortfolioRepository(_db);
-
+        
 
     }
     //public ICategoriaRepository Categoria { get; private set; }

@@ -51,6 +51,9 @@ namespace Electricad.Controllers
             var z = new ViewModel();
             z.Forms = new ContactForm();
             z.Reviews = db.tb_reviews.ToList();
+            var Movies = (from id in db.tb_about select id).FirstOrDefault();
+            z.About = new About(); 
+            z.About = Movies;
             z.Offers = db.tb_offers.ToList();
             return View(z);
         }
@@ -73,6 +76,7 @@ namespace Electricad.Controllers
                     var m = new ViewModel();
                     m.Forms = new ContactForm();
                     m.Reviews = db.tb_reviews.ToList();
+                    m.Offers = db.tb_offers.ToList();
                     ModelState.Clear();
                     TempData["Msg"] = "Review sent successfully";
                     return View(m);

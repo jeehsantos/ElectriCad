@@ -101,7 +101,7 @@ namespace Electricad.Controllers
                     {
                         archivos[0].CopyTo(fileStreams);
                     }
-                    about.about_file = @"\Uploads\about\" + fileName + newExtension;
+                    about.about_file = @"/Uploads/about/" + fileName + newExtension;
 
                     _workContent.About.Update(about);
                     _workContent.Save();

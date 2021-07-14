@@ -67,18 +67,15 @@
 
             <div class="row no-gutters">
                 <div class="col-lg-6 video-box">
-                    <img src="assets/img/about2.jpg" class="img-fluid" alt="">
+                    <img src="@Html.DisplayFor(model => model.About.about_file)" class="img-fluid" alt="">
                 </div>
 
                 <div class="col-lg-6 d-flex flex-column justify-content-center about-content">
 
                     <div class="section-title">
                         <ul><a class="titlebtn">About us</a></ul> <br>
+                        <p>@Html.DisplayFor(model => model.About.about_desc)</p>
 
-                        <p>ElectriCad is a Family business created by Sergio Cuevas in 2010, He has been in the electrical industry for more than 10 years giving quality and experience.</p>
-                        <p>Our staff is formed by qualified electricians who can work in different areas to provide a superior experience to all the electrical sector as commercial residential and industrial.</p>
-                        <p>Our main branch is located in Christchurch and our team can work along with Canterbury.</p>
-                    </div>
 
                     <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
                         <div class="icon">
@@ -99,8 +96,8 @@
 
                 </div>
             </div>
-
         </div>
+    </div>
     </section><!-- End About Us Section -->
     <!-- ====== Sevices section ======-->
     <section id="services" class="services">

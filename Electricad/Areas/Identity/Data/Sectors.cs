@@ -26,5 +26,6 @@ namespace Electricad.Data
             this.id = id;
             this.desc = desc;
         }
+
     }
 }

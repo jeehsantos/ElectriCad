@@ -9,6 +9,7 @@ using Electricad.Data;
 using Electricad.Areas.Identity.Repository;
 using Microsoft.AspNetCore.Hosting;
 using System.IO;
+using Electricad.Models;
 
 namespace Electricad.Controllers
 {
@@ -18,11 +19,13 @@ namespace Electricad.Controllers
         //private readonly ApplicationDbContext _context;
         private readonly IWorkContent _workContent;
         private readonly IWebHostEnvironment _hostingEnvironment;
-        public PortfolioController(IWebHostEnvironment hostingEnvironment, IWorkContent workContent)
+        private readonly DataSectors _sectors;
+        public PortfolioController(IWebHostEnvironment hostingEnvironment, IWorkContent workContent, DataSectors sectors)
         {
             _hostingEnvironment = hostingEnvironment;
             _workContent = workContent;
-            //_context = context;
+            _sectors = sectors;
+           
         }
 
         // GET: Offers
@@ -37,7 +40,9 @@ namespace Electricad.Controllers
         // GET: Offers/Create se nao esta comentado o codigo e porque estava igual o outro
         public IActionResult Create()
         {
-            return View();
+            var sectors = _sectors.FindAll();
+            var viewModel = new Portfolio { Sector = sectors };
+            return View(viewModel);
         }
 
         // POST: Offers/Create
@@ -54,14 +59,14 @@ namespace Electricad.Controllers
 
                 // new article
                 string nombreArchivo = Guid.NewGuid().ToString();
-                var subidas = Path.Combine(rutaPrincipal, @"Uploads\sliders");
+                var subidas = Path.Combine(rutaPrincipal, @"Uploads\portfolio");
                 var extension = Path.GetExtension(archivos[0].FileName);
 
                 using (var fileStreams = new FileStream(Path.Combine(subidas, nombreArchivo + extension), FileMode.Create))
                 {
                     archivos[0].CopyTo(fileStreams);
                 }
-                portfolio.port_file = @"\Uploads\sliders\" + nombreArchivo + extension;
+                portfolio.port_file = @"/Uploads/portfolio/" + nombreArchivo + extension;
 
                 _workContent.Portfolio.Add(portfolio);
                 _workContent.Save();

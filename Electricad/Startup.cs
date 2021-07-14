@@ -43,6 +43,7 @@ namespace Electricad
             services.AddControllersWithViews();
             services.AddScoped<ReviewsList>();
             services.AddScoped<ContactForm>();
+            services.AddScoped<DataSectors>();
             services.AddScoped<SeedingService>();
             services.AddScoped<IWorkContent, WorkContent>();
             services.AddRazorPages();

@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Electricad.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210703055857_Initial")]
-    partial class Initial
+    [Migration("20210714104856_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -31,13 +31,7 @@ namespace Electricad.Migrations
                     b.Property<string>("about_file")
                         .HasColumnType("text");
 
-                    b.Property<int?>("user_id")
-                        .HasColumnType("int");
-
                     b.HasKey("id");
-
-                    b.HasIndex("user_id")
-                        .IsUnique();
 
                     b.ToTable("tb_about");
                 });
@@ -48,10 +42,8 @@ namespace Electricad.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int?>("Userid")
-                        .HasColumnType("int");
-
                     b.Property<string>("desc")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<int>("descount")
@@ -62,26 +54,27 @@ namespace Electricad.Migrations
 
                     b.HasKey("id");
 
-                    b.HasIndex("Userid");
-
                     b.ToTable("tb_offers");
                 });
 
-            modelBuilder.Entity("Electricad.Data.Portifolio", b =>
+            modelBuilder.Entity("Electricad.Data.Portfolio", b =>
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
+                    b.Property<int?>("Userid")
+                        .HasColumnType("int");
+
                     b.Property<string>("port_file")
                         .HasColumnType("text");
 
-                    b.Property<int?>("sector_id")
+                    b.Property<int>("sector_id")
                         .HasColumnType("int");
 
                     b.HasKey("id");
 
-                    b.HasIndex("sector_id");
+                    b.HasIndex("Userid");
 
                     b.ToTable("tb_portifolio");
                 });
@@ -93,15 +86,12 @@ namespace Electricad.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("comment")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("dateComment")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("name")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.HasKey("id");
@@ -115,10 +105,15 @@ namespace Electricad.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
+                    b.Property<int?>("Portfolioid")
+                        .HasColumnType("int");
+
                     b.Property<string>("desc")
                         .HasColumnType("text");
 
                     b.HasKey("id");
+
+                    b.HasIndex("Portfolioid");
 
                     b.ToTable("tb_sectors");
                 });
@@ -185,70 +180,25 @@ namespace Electricad.Migrations
                     b.ToTable("User");
                 });
 
-            modelBuilder.Entity("PortifolioSectors", b =>
-                {
-                    b.Property<int>("Portifoliosid")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Sectorsid")
-                        .HasColumnType("int");
-
-                    b.HasKey("Portifoliosid", "Sectorsid");
-
-                    b.HasIndex("Sectorsid");
-
-                    b.ToTable("PortifolioSectors");
-                });
-
-            modelBuilder.Entity("Electricad.Data.About", b =>
+            modelBuilder.Entity("Electricad.Data.Portfolio", b =>
                 {
                     b.HasOne("Electricad.Data.User", "User")
-                        .WithOne("About")
-                        .HasForeignKey("Electricad.Data.About", "user_id");
-
-                    b.Navigation("User");
-                });
-
-            modelBuilder.Entity("Electricad.Data.Offers", b =>
-                {
-                    b.HasOne("Electricad.Data.User", "User")
-                        .WithMany("Offers")
+                        .WithMany()
                         .HasForeignKey("Userid");
 
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("Electricad.Data.Portifolio", b =>
+            modelBuilder.Entity("Electricad.Data.Sectors", b =>
                 {
-                    b.HasOne("Electricad.Data.User", "User")
-                        .WithMany("Portifolios")
-                        .HasForeignKey("sector_id");
-
-                    b.Navigation("User");
+                    b.HasOne("Electricad.Data.Portfolio", null)
+                        .WithMany("Sector")
+                        .HasForeignKey("Portfolioid");
                 });
 
-            modelBuilder.Entity("PortifolioSectors", b =>
+            modelBuilder.Entity("Electricad.Data.Portfolio", b =>
                 {
-                    b.HasOne("Electricad.Data.Portifolio", null)
-                        .WithMany()
-                        .HasForeignKey("Portifoliosid")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Electricad.Data.Sectors", null)
-                        .WithMany()
-                        .HasForeignKey("Sectorsid")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("Electricad.Data.User", b =>
-                {
-                    b.Navigation("About");
-
-                    b.Navigation("Offers");
-
-                    b.Navigation("Portifolios");
+                    b.Navigation("Sector");
                 });
 #pragma warning restore 612, 618
         }

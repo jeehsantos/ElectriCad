@@ -17,29 +17,29 @@
                     <div class="col-4">
                         <label asp-for="id"></label>
                     </div>
-                    <div class="col-8">
+                      <div class="col-8">
+                            <label asp-for="sector_id" class="control-label"></label>
+                            <select asp-for="sector_id" asp-items="@(new SelectList(Model.Sector,"id", "desc"))"
+                             class="form-control"></select>
+                            <span asp-validation-for="id" class="text-danger"></span>
+                        </div>
+                    </div>
+   
+                    <div class="form-group row">
+                        <div class="col-4">
+                            <label asp-for="port_file"></label>
+                        </div>
+                        <div class="col-8">
+                            <input type="file" name="archivos" required="required" id="subidaArchivo" class="form-control" />
+                        </div>
+                    </div>
 
-                        <input type="number" min="1" max="99" maxlength="4" asp-for="id" class="form-control" />
-
-                        <span asp-validation-for="id" class="text-danger"></span>
+                    <div class="form-group row">
+                        <div class="col-md-8 offset-4">
+                            <partial name="_ViewCreateReturn" />
+                        </div>
                     </div>
                 </div>
-
-                <div class="form-group row">
-                    <div class="col-4">
-                        <label asp-for="port_file"></label>
-                    </div>
-                    <div class="col-8">
-                        <input type="file" name="archivos" required="required" id="subidaArchivo" class="form-control" />
-                    </div>
-                </div>
-
-                <div class="form-group row">
-                    <div class="col-md-8 offset-4">
-                        <partial name="_ViewCreateReturn" />
-                    </div>
-                </div>
-            </div>
 
         </div>
     </form>
