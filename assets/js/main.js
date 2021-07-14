@@ -202,24 +202,7 @@
     items: 1
   });
 
- // Clients carousel (uses the Owl Carousel library)
- $(".clients-carousel").owlCarousel({
-  autoplay: true,
-  dots: true,
-  loop: true,
-  responsive: {
-    0: {
-      items: 2
-    },
-    768: {
-      items: 4
-    },
-    900: {
-      items: 6
-    }
-  }
-});
-
+ 
 // jQuery counterUp
 $('[data-toggle="counter-up"]').counterUp({
   delay: 10,
@@ -239,10 +222,10 @@ $(".testimonials-carousel").owlCarousel({
       items: 1
     },
     900: {
-      items: 2
+      item: 2
     },
     1400: {
-      items: 3
+      item: 3 
     }
   }
 });
