@@ -4,7 +4,7 @@
     ViewData["Title"] = "Edit";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
- 
+
 <h3 class="text-center">Edit Offer</h3>
 <form method="post" asp-action="Edit" enctype="multipart/form-data">
 
@@ -28,7 +28,7 @@
                         <label asp-for="desc"></label>
                     </div>
                     <div class="col-8">
-                        <textarea asp-for="desc" class="form-control" style="height: 300px;"></textarea>
+                        <textarea asp-for="desc" id="editor" class="form-control" style="height: 300px;"></textarea>
                         <span asp-validation-for="desc" class="text-danger"></span>
                     </div>
                 </div>
@@ -61,4 +61,3 @@
 </form>
 
  
-

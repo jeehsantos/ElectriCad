@@ -17,13 +17,13 @@
                     <div class="col-4">
                         <label asp-for="id"></label>
                     </div>
-                      <div class="col-8">
-                            <label asp-for="sector_id" class="control-label"></label>
-                            <select asp-for="sector_id" asp-items="@(new SelectList(Model.Sector,"id", "desc"))"
-                             class="form-control"></select>
-                            <span asp-validation-for="id" class="text-danger"></span>
-                        </div>
-                    </div>
+                    <div class="col-8">
+          <label asp-for="Sectorsid" class="control-label"></label>
+          <select asp-for="Sectorsid"  asp-items="@(new SelectList(Model.Sector,"id", "desc"))"
+           class="form-control"></select>
+          <span asp-validation-for="Sectorsid" class="text-danger"></span>
+      </div>
+                </div>
    
                     <div class="form-group row">
                         <div class="col-4">
@@ -45,8 +45,3 @@
     </form>
 
 </div>
-
-@section Scripts{
-    <script>
-        CKEDITOR.replace('editor');</script>
-}

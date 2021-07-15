@@ -9,15 +9,12 @@ namespace Electricad.Data
 
         [Key]
         public int id { get; set; }
-
         [DataType(DataType.ImageUrl)]
         [Display(Name = "Image")]
         public string port_file { get; set; }
-      
         public User User { get; set; }
         public ICollection<Sectors> Sector { get; set; }
-        [ForeignKey("sector_id")]
-        public int sector_id { get; set; }
+        public int Sectorsid { get; set; }
 
         public Portfolio()
         {

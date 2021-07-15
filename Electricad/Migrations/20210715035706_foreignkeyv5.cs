@@ -1,9 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
-using MySql.EntityFrameworkCore.Metadata;
 
 namespace Electricad.Migrations
 {
-    public partial class AboutFieldRemoved : Migration
+    public partial class foreignkeyv5 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -19,38 +18,39 @@ namespace Electricad.Migrations
                 name: "Userid",
                 table: "tb_about");
 
-            migrationBuilder.AlterColumn<int>(
-                name: "id",
-                table: "tb_about",
+            migrationBuilder.AddColumn<int>(
+                name: "Aboutid",
+                table: "User",
                 type: "int",
-                nullable: false,
-                oldClrType: typeof(int),
-                oldType: "int")
-                .OldAnnotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn);
+                nullable: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_User_Aboutid",
+                table: "User",
+                column: "Aboutid");
 
             migrationBuilder.AddForeignKey(
-                name: "FK_tb_about_User_id",
-                table: "tb_about",
-                column: "id",
-                principalTable: "User",
+                name: "FK_User_tb_about_Aboutid",
+                table: "User",
+                column: "Aboutid",
+                principalTable: "tb_about",
                 principalColumn: "id",
-                onDelete: ReferentialAction.Cascade);
+                onDelete: ReferentialAction.Restrict);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropForeignKey(
-                name: "FK_tb_about_User_id",
-                table: "tb_about");
+                name: "FK_User_tb_about_Aboutid",
+                table: "User");
 
-            migrationBuilder.AlterColumn<int>(
-                name: "id",
-                table: "tb_about",
-                type: "int",
-                nullable: false,
-                oldClrType: typeof(int),
-                oldType: "int")
-                .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn);
+            migrationBuilder.DropIndex(
+                name: "IX_User_Aboutid",
+                table: "User");
+
+            migrationBuilder.DropColumn(
+                name: "Aboutid",
+                table: "User");
 
             migrationBuilder.AddColumn<int>(
                 name: "Userid",

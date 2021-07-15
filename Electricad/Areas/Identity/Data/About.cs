@@ -14,15 +14,11 @@ namespace Electricad.Data
 
         [Key]
         public int id { get; set; }
-        
-        [Display(Name = "About image")]
         public string about_file { get; set; }
-     
-        [Display(Name = "About Description")]
         public string about_desc { get; set; }
-        [ForeignKey("user_id")]
-        public int Userid { get; set; }
         public User User { get; set; }
+        [ForeignKey("User")]
+        public int Userid { get; set; }
 
         public About()
         {
@@ -34,7 +30,7 @@ namespace Electricad.Data
             this.id = id;
             this.about_file = about_file;
             this.about_desc = about_desc;
-            this.User = user;
+           // this.User = user;
         }
  
 

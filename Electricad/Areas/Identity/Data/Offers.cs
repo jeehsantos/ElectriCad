@@ -24,7 +24,7 @@ namespace Electricad.Data
         [Display(Name = "Slider Name")]
         public string desc { get; set; }
         public User User { get; set; }
-       
+
         public Offers()
         {
 

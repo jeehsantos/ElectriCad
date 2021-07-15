@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Electricad.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210714105647_RelationshipTables")]
-    partial class RelationshipTables
+    [Migration("20210715022510_foreignkey")]
+    partial class foreignkey
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -25,18 +25,18 @@ namespace Electricad.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int>("Userid")
-                        .HasColumnType("int");
-
                     b.Property<string>("about_desc")
                         .HasColumnType("text");
 
                     b.Property<string>("about_file")
                         .HasColumnType("text");
 
+                    b.Property<int?>("user_id")
+                        .HasColumnType("int");
+
                     b.HasKey("id");
 
-                    b.HasIndex("Userid")
+                    b.HasIndex("user_id")
                         .IsUnique();
 
                     b.ToTable("tb_about");
@@ -74,16 +74,18 @@ namespace Electricad.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
+                    b.Property<int>("Sectorsid")
+                        .HasColumnType("int");
+
                     b.Property<int?>("Userid")
                         .HasColumnType("int");
 
                     b.Property<string>("port_file")
                         .HasColumnType("text");
 
-                    b.Property<int>("sector_id")
-                        .HasColumnType("int");
-
                     b.HasKey("id");
+
+                    b.HasIndex("Sectorsid");
 
                     b.HasIndex("Userid");
 
@@ -186,28 +188,11 @@ namespace Electricad.Migrations
                     b.ToTable("User");
                 });
 
-            modelBuilder.Entity("PortfolioSectors", b =>
-                {
-                    b.Property<int>("Portfoliosid")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Sectorid")
-                        .HasColumnType("int");
-
-                    b.HasKey("Portfoliosid", "Sectorid");
-
-                    b.HasIndex("Sectorid");
-
-                    b.ToTable("PortfolioSectors");
-                });
-
             modelBuilder.Entity("Electricad.Data.About", b =>
                 {
                     b.HasOne("Electricad.Data.User", "User")
                         .WithOne("About")
-                        .HasForeignKey("Electricad.Data.About", "Userid")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("Electricad.Data.About", "user_id");
 
                     b.Navigation("User");
                 });
@@ -223,26 +208,24 @@ namespace Electricad.Migrations
 
             modelBuilder.Entity("Electricad.Data.Portfolio", b =>
                 {
+                    b.HasOne("Electricad.Data.Sectors", "Sector")
+                        .WithMany("Portfolios")
+                        .HasForeignKey("Sectorsid")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("Electricad.Data.User", "User")
                         .WithMany("Portifolios")
                         .HasForeignKey("Userid");
 
+                    b.Navigation("Sector");
+
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("PortfolioSectors", b =>
+            modelBuilder.Entity("Electricad.Data.Sectors", b =>
                 {
-                    b.HasOne("Electricad.Data.Portfolio", null)
-                        .WithMany()
-                        .HasForeignKey("Portfoliosid")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Electricad.Data.Sectors", null)
-                        .WithMany()
-                        .HasForeignKey("Sectorid")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.Navigation("Portfolios");
                 });
 
             modelBuilder.Entity("Electricad.Data.User", b =>

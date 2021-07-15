@@ -2,7 +2,7 @@
 
 namespace Electricad.Migrations
 {
-    public partial class RelationshipTables : Migration
+    public partial class foreignkeyv3 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

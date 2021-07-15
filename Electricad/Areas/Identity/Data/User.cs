@@ -8,13 +8,12 @@ using System.Threading.Tasks;
 
 namespace Electricad.Data
 {
-    public class User : IdentityUser
+    public class User 
     {
         [Key]
         public int id { get; set; }
         public string login { get; set; }
         public string password { get; set; }
-         
         public About About { get; set; }
         public ICollection<Offers> Offers { get; set; } = new List<Offers>();
         public ICollection<Portfolio> Portifolios { get; set; } = new List<Portfolio>();

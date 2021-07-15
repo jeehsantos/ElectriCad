@@ -20,6 +20,10 @@ namespace Electricad.Migrations
             modelBuilder.Entity("Electricad.Data.About", b =>
                 {
                     b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<int>("Userid")
                         .HasColumnType("int");
 
                     b.Property<string>("about_desc")
@@ -29,6 +33,9 @@ namespace Electricad.Migrations
                         .HasColumnType("text");
 
                     b.HasKey("id");
+
+                    b.HasIndex("Userid")
+                        .IsUnique();
 
                     b.ToTable("tb_about");
                 });
@@ -65,14 +72,14 @@ namespace Electricad.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
+                    b.Property<int>("Sectorsid")
+                        .HasColumnType("int");
+
                     b.Property<int?>("Userid")
                         .HasColumnType("int");
 
                     b.Property<string>("port_file")
                         .HasColumnType("text");
-
-                    b.Property<int>("sector_id")
-                        .HasColumnType("int");
 
                     b.HasKey("id");
 
@@ -196,7 +203,7 @@ namespace Electricad.Migrations
                 {
                     b.HasOne("Electricad.Data.User", "User")
                         .WithOne("About")
-                        .HasForeignKey("Electricad.Data.About", "id")
+                        .HasForeignKey("Electricad.Data.About", "Userid")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

@@ -14,10 +14,9 @@ function cargarDatatable() {
             "datatype": "json"
         },
         "columns": [
-            { "data": "descount", "width": "10%" },
-            { "data": "desc", "width": "22%" },
+            { "data": "id", "width": "10%" },
             {
-                "data": "offer_file",
+                "data": "port_file",
                 "render": function (image) {
                     return `<img src="../${image}" width="200">`
                 }
@@ -25,12 +24,7 @@ function cargarDatatable() {
             {
                 "data": "id",
                 "render": function (data) {
-                    return `<div class="text-center">
-                            <a href='/Portfolio/Edit/${data}' class='btn btn-info text-white' style='cursor:pointer; width:100px;'>
-                            <i class='fas fa-edit'></i> Edit
-                            </a>
-                            &nbsp;
-                            <a onclick=Delete("/Portfolio/Delete/${data}") class='btn btn-danger text-white' style='cursor:pointer; width:100px;'>
+                    return `<a onclick=Delete("/Portfolio/Delete/${data}") class='btn btn-danger text-white' style='cursor:pointer; width:100px;'>
                             <i class='fas fa-trash-alt'></i> Delete
                             </a>
                             `;
