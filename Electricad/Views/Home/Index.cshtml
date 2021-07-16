@@ -29,7 +29,7 @@
                             </div>
                         </div>
                     </div>
-                    @if (Model.Reviews != null)
+                    @if (Model.Offers != null)
                     {
                         @foreach (var item in Model.Offers)
                         {
@@ -304,38 +304,46 @@
 
         </div>
     </section><!-- End Portfolio Section -->
-    <!---======= EXPERIENCES-->
-    <section id="experiences" class="experiences">
-        <div class="experiences-clean">
-            <div class="container">
-                <div class="intro text-center">
-                    <ul><a href="index.html" class="titlebtn">Experiences</a></ul> <br>
-                    <p class="text-center">Our customers love us! Read what they have to say below. Aliquam sed justo ligula. Vestibulum nibh erat, pellentesque ut laoreet vitae.</p>
-                </div>
+    <!------- TESTIMONIALS ---------->
+    <section id="testimonials" class="testimonials">
+        <div class="container" data-aos="fade-up">
+            <div class="section-title">
+                <ul><a href="index.html" class="tittle">Experiences</a></ul> <br>
+                <p>Our customers love us! Read what they have to say about Electrical services below.</p>
+            </div>
+        </div>
 
-                <div class="row people">
-                    @if (Model.Reviews != null)
-                    {
-                        @foreach (var item in Model.Reviews)
+        <div class="container-fluid">
+
+            <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="100">
+                <div class="col-xl-10">
+                    <div class="owl-carousel testimonials-carousel">
+                        @if (Model.Reviews != null)
                         {
-                            <div class="col-md-6 col-lg-4 item">
-                                <div class="box">
-                                    <p class="description">"@item.comment"</p>
+                            @foreach (var item in Model.Reviews)
+                            {
+                                <div class="testimonial-wrap">
+                                    <div class="testimonial-item">
+                                        <p>
+                                            <i class="bx bxs-quote-alt-left quote-icon-left"></i>"@item.comment"
+                                            <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                                        </p>
+                                        <h3>
+                                            @item.name
+                                        </h3>
+                                        <h4>@item.dateComment</h4>
+                                    </div>
                                 </div>
-                                <div class="author">
-                                    <h5 class="name">@item.name</h5>
-                                    <p class="title">@item.dateComment</p>
-                                </div>
-                            </div>
+                            }
+
+
                         }
 
-
-                    }
-
-                    else
-                    {
-                        <div>Nothing to show</div>
-                    }
+                        else
+                        {
+                            <div>Nothing to show</div>
+                        }
+                    </div>
                 </div>
             </div>
         </div>

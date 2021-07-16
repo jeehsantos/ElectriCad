@@ -226,7 +226,26 @@
         input.style.opacity = 0;
     });
 
-    
+    // Testimonials carousel (uses the Owl Carousel library)
+    $(".testimonials-carousel").owlCarousel({
+        autoplay: true,
+        dots: true,
+        loop: true,
+        responsive: {
+            0: {
+                items: 1
+            },
+            768: {
+                items: 1
+            },
+            900: {
+                item: 2
+            },
+            1400: {
+                item: 3
+            }
+        }
+    });
 })(jQuery);
 
  
