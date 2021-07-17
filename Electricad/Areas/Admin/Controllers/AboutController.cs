@@ -43,7 +43,7 @@ namespace Electricad.Controllers
             }
 
             var about = await _context.tb_about
-                .FirstOrDefaultAsync(m => m.id == id);
+                .FirstOrDefaultAsync(m => m.Userid == id);
             if (about == null)
             {
                 return NotFound();
@@ -80,7 +80,7 @@ namespace Electricad.Controllers
             {
                 string mainRoot = _hostingEnvironment.WebRootPath;
                 var archivos = HttpContext.Request.Form.Files;
-                var aboutFromDb = _workContent.About.Get(about.id);
+                var aboutFromDb = _workContent.About.Get(about.Userid);
                 if (archivos.Count() > 0)
                 {
                     // edit image

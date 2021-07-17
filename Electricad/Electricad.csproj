@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+	<NoWarn>$(NoWarn);NU1701</NoWarn>
     <UserSecretsId>aspnet-Electricad-13C4F869-60D5-4213-8BA3-14FB1E736681</UserSecretsId>
   </PropertyGroup>
 

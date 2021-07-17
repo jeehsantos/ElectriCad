@@ -19,10 +19,6 @@ namespace Electricad.Migrations
 
             modelBuilder.Entity("Electricad.Data.About", b =>
                 {
-                    b.Property<int>("id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
                     b.Property<int>("Userid")
                         .HasColumnType("int");
 
@@ -32,10 +28,7 @@ namespace Electricad.Migrations
                     b.Property<string>("about_file")
                         .HasColumnType("text");
 
-                    b.HasKey("id");
-
-                    b.HasIndex("Userid")
-                        .IsUnique();
+                    b.HasKey("Userid");
 
                     b.ToTable("tb_about");
                 });
@@ -83,6 +76,8 @@ namespace Electricad.Migrations
 
                     b.HasKey("id");
 
+                    b.HasIndex("Sectorsid");
+
                     b.HasIndex("Userid");
 
                     b.ToTable("tb_portifolio");
@@ -128,51 +123,6 @@ namespace Electricad.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int>("AccessFailedCount")
-                        .HasColumnType("int");
-
-                    b.Property<string>("ConcurrencyStamp")
-                        .HasColumnType("text");
-
-                    b.Property<string>("Email")
-                        .HasColumnType("text");
-
-                    b.Property<bool>("EmailConfirmed")
-                        .HasColumnType("tinyint(1)");
-
-                    b.Property<string>("Id")
-                        .HasColumnType("text");
-
-                    b.Property<bool>("LockoutEnabled")
-                        .HasColumnType("tinyint(1)");
-
-                    b.Property<DateTimeOffset?>("LockoutEnd")
-                        .HasColumnType("timestamp");
-
-                    b.Property<string>("NormalizedEmail")
-                        .HasColumnType("text");
-
-                    b.Property<string>("NormalizedUserName")
-                        .HasColumnType("text");
-
-                    b.Property<string>("PasswordHash")
-                        .HasColumnType("text");
-
-                    b.Property<string>("PhoneNumber")
-                        .HasColumnType("text");
-
-                    b.Property<bool>("PhoneNumberConfirmed")
-                        .HasColumnType("tinyint(1)");
-
-                    b.Property<string>("SecurityStamp")
-                        .HasColumnType("text");
-
-                    b.Property<bool>("TwoFactorEnabled")
-                        .HasColumnType("tinyint(1)");
-
-                    b.Property<string>("UserName")
-                        .HasColumnType("text");
-
                     b.Property<string>("login")
                         .HasColumnType("text");
 
@@ -182,21 +132,6 @@ namespace Electricad.Migrations
                     b.HasKey("id");
 
                     b.ToTable("User");
-                });
-
-            modelBuilder.Entity("PortfolioSectors", b =>
-                {
-                    b.Property<int>("Portfoliosid")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Sectorid")
-                        .HasColumnType("int");
-
-                    b.HasKey("Portfoliosid", "Sectorid");
-
-                    b.HasIndex("Sectorid");
-
-                    b.ToTable("PortfolioSectors");
                 });
 
             modelBuilder.Entity("Electricad.Data.About", b =>
@@ -221,26 +156,24 @@ namespace Electricad.Migrations
 
             modelBuilder.Entity("Electricad.Data.Portfolio", b =>
                 {
+                    b.HasOne("Electricad.Data.Sectors", "Sector")
+                        .WithMany("Portfolios")
+                        .HasForeignKey("Sectorsid")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("Electricad.Data.User", "User")
                         .WithMany("Portifolios")
                         .HasForeignKey("Userid");
 
+                    b.Navigation("Sector");
+
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("PortfolioSectors", b =>
+            modelBuilder.Entity("Electricad.Data.Sectors", b =>
                 {
-                    b.HasOne("Electricad.Data.Portfolio", null)
-                        .WithMany()
-                        .HasForeignKey("Portfoliosid")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Electricad.Data.Sectors", null)
-                        .WithMany()
-                        .HasForeignKey("Sectorid")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.Navigation("Portfolios");
                 });
 
             modelBuilder.Entity("Electricad.Data.User", b =>

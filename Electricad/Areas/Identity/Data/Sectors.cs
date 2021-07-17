@@ -10,8 +10,8 @@ namespace Electricad.Data
 {
     public class Sectors  
     {
-
-      
+        private readonly ApplicationDbContext _context;
+        [Key]
         public int id { get; set; }
         public string desc { get; set; }
         public ICollection<Portfolio> Portfolios { get; set; } = new List<Portfolio>();
@@ -25,7 +25,12 @@ namespace Electricad.Data
         {
             this.id = id;
             this.desc = desc;
+         
         }
 
+        public ICollection<Sectors> FindAll()
+        {
+            return _context.tb_sectors.OrderBy(x => x.desc).ToList();
+        }
     }
 }

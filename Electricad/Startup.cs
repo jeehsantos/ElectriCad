@@ -78,24 +78,24 @@ namespace Electricad
                 endpoints.MapRazorPages();
 
                 endpoints.MapAreaControllerRoute(
-                   name: "AdminArea",
-                   areaName: "Admin",
-                   pattern: "{controller=Account}/{action=Login}");
+                     name: "AdminArea",
+                     areaName: "Admin",
+                     pattern: "{controller=Account}/{action=Logintest}");
 
-                endpoints.MapAreaControllerRoute(
-                   name: "AdminArea",
-                   areaName: "Admin",
-                   pattern: "{controller=Offers}/{action=Index}/{id?}");
+                  endpoints.MapAreaControllerRoute(
+                     name: "AdminArea",
+                     areaName: "Admin",
+                     pattern: "{controller=Offers}/{action=Index}/{id?}");
 
-                endpoints.MapAreaControllerRoute(
-                  name: "AdminArea",
-                  areaName: "Admin",
-                  pattern: "{controller=About}/{action=Details}/{id?}");
+                  endpoints.MapAreaControllerRoute(
+                    name: "AdminArea",
+                    areaName: "Admin",
+                    pattern: "{controller=About}/{action=Details}/{id?}");
 
-                endpoints.MapAreaControllerRoute(
-                  name: "AdminArea",
-                  areaName: "Admin",
-                  pattern: "{controller=Portfolio}/{action=Details}/{id?}");
+                  endpoints.MapAreaControllerRoute(
+                    name: "AdminArea",
+                    areaName: "Admin",
+                    pattern: "{controller=Portfolio}/{action=Details}/{id?}"); 
             });
         }
     }

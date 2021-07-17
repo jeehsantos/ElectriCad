@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Electricad.Models;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace Electricad.Areas.Identity
 {
@@ -23,6 +24,11 @@ namespace Electricad.Areas.Identity
             objDesdeDb.port_file = portfolio.port_file;
             
             _db.SaveChanges();
+        }
+
+        public async Task<Portfolio> GetPortfolio(int id)
+        {
+            return await _db.tb_portifolio.Include(e => e.Sector).FirstOrDefaultAsync(e => e.id == id);
         }
     }
 }

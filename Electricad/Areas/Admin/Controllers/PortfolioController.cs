@@ -20,6 +20,8 @@ namespace Electricad.Controllers
         private readonly IWorkContent _workContent;
         private readonly IWebHostEnvironment _hostingEnvironment;
         private readonly DataSectors _sectors;
+      
+            
         public PortfolioController(IWebHostEnvironment hostingEnvironment, IWorkContent workContent, DataSectors sectors)
         {
             _hostingEnvironment = hostingEnvironment;
@@ -33,16 +35,20 @@ namespace Electricad.Controllers
         [HttpGet]
         public IActionResult Index()
         {
+            
             return View();
+          
         }
 
-
+     
         // GET: Offers/Create se nao esta comentado o codigo e porque estava igual o outro
         public IActionResult Create()
         {
-            var sectors = _sectors.FindAll();
-            var viewModel = new Portfolio { Sector = sectors };
-            return View(viewModel);
+            var z = new ViewModel();
+            
+            z.Sectors = _sectors.FindAll();
+           
+            return View(z);
         }
 
         // POST: Offers/Create
@@ -54,19 +60,19 @@ namespace Electricad.Controllers
         {
             if (ModelState.IsValid)
             {
-                string rutaPrincipal = _hostingEnvironment.WebRootPath;
+                string principalRoot = _hostingEnvironment.WebRootPath;
                 var archivos = HttpContext.Request.Form.Files;
 
                 // new article
-                string nombreArchivo = Guid.NewGuid().ToString();
-                var subidas = Path.Combine(rutaPrincipal, @"Uploads\portfolio");
+                string fileName = Guid.NewGuid().ToString();
+                var uploads = Path.Combine(principalRoot, @"Uploads\portfolio");
                 var extension = Path.GetExtension(archivos[0].FileName);
 
-                using (var fileStreams = new FileStream(Path.Combine(subidas, nombreArchivo + extension), FileMode.Create))
+                using (var fileStreams = new FileStream(Path.Combine(uploads, fileName + extension), FileMode.Create))
                 {
                     archivos[0].CopyTo(fileStreams);
                 }
-                portfolio.port_file = @"/Uploads/portfolio/" + nombreArchivo + extension;
+                portfolio.port_file = @"/Uploads/portfolio/" + fileName + extension;
 
                 _workContent.Portfolio.Add(portfolio);
                 _workContent.Save();
@@ -81,6 +87,7 @@ namespace Electricad.Controllers
         [HttpGet]
         public IActionResult GetAll()
         {
+            
             return Json(new { data = _workContent.Portfolio.GetAll() });
         }
 

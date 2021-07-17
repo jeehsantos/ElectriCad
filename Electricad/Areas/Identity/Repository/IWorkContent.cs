@@ -12,7 +12,7 @@ namespace Electricad.Areas.Identity.Repository
     IOffersRepository Offers { get; }
     IAboutRepository About { get; }
     IPortfolioRepository Portfolio { get; }
-
+  
     void Save();
     }
 }

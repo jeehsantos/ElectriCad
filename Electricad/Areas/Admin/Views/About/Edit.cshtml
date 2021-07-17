@@ -10,7 +10,7 @@
 <h3 class="text-center">Edit about</h3>
 <div class="container-sm">
     <form method="post" asp-action="Edit" enctype="multipart/form-data">
-        <input type="hidden" asp-for="id" />
+        <input type="hidden" asp-for="Userid" />
         <div class="row">
             <div class="col-md-6 col-md-offset-2">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -39,7 +39,7 @@
                     <div class="form-group row">
 
                         <div class="col-md-8 col-md-offset-2 text-center">
-                            <button type="submit" class="btn btn-primary btn-lg" asp-action="Edit" asp-route-id="@Model.id">Update</button>
+                            <button type="submit" class="btn btn-primary btn-lg" asp-action="Edit" asp-route-id="@Model.Userid">Update</button>
                             <a asp-area="Admin" asp-controller="Offers" asp-action="Index" class="btn btn-success btn-lg" style="margin-left:20%;">Return</a>
                         </div>
                     </div>

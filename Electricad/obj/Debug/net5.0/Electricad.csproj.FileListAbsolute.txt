@@ -355,9 +355,9 @@ C:\Users\jeehs\OneDrive\Documentos\GitHub\ElectriCad\Electricad\obj\Debug\net5.0
 C:\Users\jeehs\OneDrive\Documentos\GitHub\ElectriCad\Electricad\obj\Debug\net5.0\Razor\Areas\Admin\Views\Shared\_ViewCreateReturn.cshtml.g.cs
 C:\Users\jeehs\OneDrive\Documentos\GitHub\ElectriCad\Electricad\obj\Debug\net5.0\Razor\Areas\Admin\Views\_ViewImports.cshtml.g.cs
 C:\Users\jeehs\OneDrive\Documentos\GitHub\ElectriCad\Electricad\obj\Debug\net5.0\Razor\Areas\Admin\Views\_ViewStart.cshtml.g.cs
-C:\Users\jeehs\OneDrive\Documentos\GitHub\ElectriCad\Electricad\obj\Debug\net5.0\Razor\Views\Account\Login.cshtml.g.cs
-C:\Users\jeehs\OneDrive\Documentos\GitHub\ElectriCad\Electricad\obj\Debug\net5.0\Razor\Views\Account\Logout.cshtml.g.cs
-C:\Users\jeehs\OneDrive\Documentos\GitHub\ElectriCad\Electricad\obj\Debug\net5.0\Razor\Views\Account\_ViewImports.cshtml.g.cs
+C:\Users\jeehs\OneDrive\Documentos\GitHub\ElectriCad\Electricad\obj\Debug\net5.0\Razor\Areas\Identity\Account\Login.cshtml.g.cs
+C:\Users\jeehs\OneDrive\Documentos\GitHub\ElectriCad\Electricad\obj\Debug\net5.0\Razor\Areas\Identity\Account\Logout.cshtml.g.cs
+C:\Users\jeehs\OneDrive\Documentos\GitHub\ElectriCad\Electricad\obj\Debug\net5.0\Razor\Areas\Identity\Account\_ViewImports.cshtml.g.cs
 C:\Users\jeehs\OneDrive\Documentos\GitHub\ElectriCad\Electricad\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
 C:\Users\jeehs\OneDrive\Documentos\GitHub\ElectriCad\Electricad\obj\Debug\net5.0\Razor\Views\Shared\Error.cshtml.g.cs
 C:\Users\jeehs\OneDrive\Documentos\GitHub\ElectriCad\Electricad\obj\Debug\net5.0\Razor\Views\Shared\_AdminLayout.cshtml.g.cs

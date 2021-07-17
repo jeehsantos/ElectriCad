@@ -26,12 +26,12 @@ namespace Electricad.Data
             Sectors s4 = new Sectors(4, "Solar Panels");
             Sectors s5 = new Sectors(5, "Design");
 
-           // About b1 = new About(1, "", "", null);
-           // User u1 = new User(1, "admin", "admin");
 
+             User u1 = new User(1, "admin", "admin");
+              About b1 = new About(1, "", "");
             _context.tb_sectors.AddRange(s1, s2, s3, s4, s5);
-            //_context.tb_about.AddRange(b1);
-            //_context.User.AddRange(u1);
+            _context.User.AddRange(u1);
+            _context.tb_about.AddRange(b1);
             _context.SaveChanges();
         }
     }

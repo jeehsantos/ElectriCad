@@ -9,5 +9,6 @@ namespace Electricad.Areas.Identity.Repository
     public interface IPortfolioRepository : IRepository<Portfolio>
     {
         void Update(Portfolio portfolio);
+       
     }
 }

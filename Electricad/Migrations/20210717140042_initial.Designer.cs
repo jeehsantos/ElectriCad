@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Electricad.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210715034643_foreignkeyv4")]
-    partial class foreignkeyv4
+    [Migration("20210717140042_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -21,10 +21,6 @@ namespace Electricad.Migrations
 
             modelBuilder.Entity("Electricad.Data.About", b =>
                 {
-                    b.Property<int>("id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
                     b.Property<int>("Userid")
                         .HasColumnType("int");
 
@@ -34,10 +30,7 @@ namespace Electricad.Migrations
                     b.Property<string>("about_file")
                         .HasColumnType("text");
 
-                    b.HasKey("id");
-
-                    b.HasIndex("Userid")
-                        .IsUnique();
+                    b.HasKey("Userid");
 
                     b.ToTable("tb_about");
                 });
@@ -132,51 +125,6 @@ namespace Electricad.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int>("AccessFailedCount")
-                        .HasColumnType("int");
-
-                    b.Property<string>("ConcurrencyStamp")
-                        .HasColumnType("text");
-
-                    b.Property<string>("Email")
-                        .HasColumnType("text");
-
-                    b.Property<bool>("EmailConfirmed")
-                        .HasColumnType("tinyint(1)");
-
-                    b.Property<string>("Id")
-                        .HasColumnType("text");
-
-                    b.Property<bool>("LockoutEnabled")
-                        .HasColumnType("tinyint(1)");
-
-                    b.Property<DateTimeOffset?>("LockoutEnd")
-                        .HasColumnType("timestamp");
-
-                    b.Property<string>("NormalizedEmail")
-                        .HasColumnType("text");
-
-                    b.Property<string>("NormalizedUserName")
-                        .HasColumnType("text");
-
-                    b.Property<string>("PasswordHash")
-                        .HasColumnType("text");
-
-                    b.Property<string>("PhoneNumber")
-                        .HasColumnType("text");
-
-                    b.Property<bool>("PhoneNumberConfirmed")
-                        .HasColumnType("tinyint(1)");
-
-                    b.Property<string>("SecurityStamp")
-                        .HasColumnType("text");
-
-                    b.Property<bool>("TwoFactorEnabled")
-                        .HasColumnType("tinyint(1)");
-
-                    b.Property<string>("UserName")
-                        .HasColumnType("text");
-
                     b.Property<string>("login")
                         .HasColumnType("text");
 
@@ -190,11 +138,13 @@ namespace Electricad.Migrations
 
             modelBuilder.Entity("Electricad.Data.About", b =>
                 {
-                    b.HasOne("Electricad.Data.User", null)
+                    b.HasOne("Electricad.Data.User", "User")
                         .WithOne("About")
                         .HasForeignKey("Electricad.Data.About", "Userid")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Electricad.Data.Offers", b =>

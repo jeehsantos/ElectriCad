@@ -13,9 +13,9 @@ namespace Electricad.Data
         [Display(Name = "Image")]
         public string port_file { get; set; }
         public User User { get; set; }
-        public ICollection<Sectors> Sector { get; set; }
+        [ForeignKey("Sector")]
         public int Sectorsid { get; set; }
-
+        public Sectors Sector { get; set; }
         public Portfolio()
         {
 

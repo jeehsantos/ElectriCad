@@ -18,7 +18,7 @@ namespace Electricad.Areas.Identity
         }
         public void Update(About about)
         {
-            var objDesdeDb = _db.tb_about.FirstOrDefault(s => s.id == about.id);
+            var objDesdeDb = _db.tb_about.FirstOrDefault(s => s.Userid == about.Userid);
             objDesdeDb.about_desc = about.about_desc;
             objDesdeDb.about_file = about.about_file;
             _db.SaveChanges();
