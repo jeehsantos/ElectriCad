@@ -15,7 +15,11 @@ namespace Electricad.Data
         [Key]
         [ForeignKey("User")]
         public int Userid { get; set; }
+        [DataType(DataType.ImageUrl)]
+        [Display(Name = "Image")]
         public string about_file { get; set; }
+        [Required(ErrorMessage = "A description is required")]
+        [Display(Name = "Your profile description")]
         public string about_desc { get; set; }
         public User User { get; set; }
 

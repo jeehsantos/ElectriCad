@@ -9,9 +9,11 @@ using Electricad.Data;
 using Electricad.Areas.Identity.Repository;
 using Microsoft.AspNetCore.Hosting;
 using System.IO;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Electricad.Controllers
 {
+    [Authorize]
     [Area("Admin")]
     public class AboutController : Controller
     {

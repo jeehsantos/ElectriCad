@@ -1,6 +1,7 @@
 ﻿using Electricad.Data;
 using Electricad.Models;
 using Electricad.Utilities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity.UI.V4.Pages.Account.Manage.Internal;
@@ -24,7 +25,7 @@ using System.Threading.Tasks;
 
 namespace Electricad.Controllers
 {
-
+    [AllowAnonymous]
     public class HomeController : Controller
     {
         private readonly ApplicationDbContext db;

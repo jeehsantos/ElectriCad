@@ -16,7 +16,7 @@ namespace Electricad.Data
         public int id { get; set; }
         [Required(ErrorMessage = "Type a discount %")]
         [Display(Name = "Discount %")]
-        public int descount { get; set; }
+        public int discount { get; set; }
         [DataType(DataType.ImageUrl)]
         [Display(Name = "Image")]
         public string offer_file { get; set; }
@@ -30,10 +30,10 @@ namespace Electricad.Data
 
         }
 
-        public Offers(int id, int descount, string offer_file, string desc)
+        public Offers(int id, int discount, string offer_file, string desc)
         {
             this.id = id;
-            this.descount = descount;
+            this.discount = discount;
             this.offer_file = offer_file;
             this.desc = desc;
         }

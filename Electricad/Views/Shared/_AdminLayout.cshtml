@@ -26,11 +26,16 @@
                 <div class="navbar-header">
                     <a> <img class="img-fluid" width="200px;" src="~/assets/img/logowhite.png" />   </a>
                 </div>
-                <div id="navbar" class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav navbar-right">
-                        <a class="btn flex-column btn-danger" href="login.html">LOGOUT</a>
-                    </ul>
-                </div>
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <div id="navbar" class="collapse navbar-collapse">
+                        <ul class="nav navbar-nav navbar-right">
+                            <form method="post" asp-controller="Account" asp-action="Logout">
+                                <button class="btn flex-column btn-danger" href="login.html">LOGOUT</button>
+                            </form>
+                        </ul>
+                    </div>
+                }
             </div>
         </nav>
     </header>

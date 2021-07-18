@@ -20,7 +20,7 @@ namespace Electricad.Areas.Identity
         {
             var objDesdeDb = _db.tb_offers.FirstOrDefault(s => s.id == offers.id);
             objDesdeDb.desc = offers.desc;
-            objDesdeDb.descount = offers.descount;
+            objDesdeDb.discount = offers.discount;
             objDesdeDb.offer_file = offers.offer_file;
             _db.SaveChanges();
         }

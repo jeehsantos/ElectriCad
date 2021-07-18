@@ -10,10 +10,10 @@
 <h3 class="text-center">Edit about</h3>
 <div class="container-sm">
     <form method="post" asp-action="Edit" enctype="multipart/form-data">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         <input type="hidden" asp-for="Userid" />
         <div class="row">
             <div class="col-md-6 col-md-offset-2">
-                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <div class="col-8 mt-4">
                     <div class="form-group row">
                         <div class="col-4">
@@ -32,7 +32,7 @@
                             <label asp-for="about_file"></label>
                         </div>
                         <div class="col-8">
-                            <input type="file" name="archivos" id="subidaArchivo" class="form-control" />
+                            <input type="file" name="archivos" required id="subidaArchivo" class="form-control" />
                         </div>
                     </div>
 

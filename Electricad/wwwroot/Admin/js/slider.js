@@ -14,12 +14,12 @@ function cargarDatatable() {
             "datatype": "json"
         },
         "columns": [
-            { "data": "descount", "width": "10%" },
+            { "data": "discount", "width": "10%" },
             { "data": "desc", "width": "22%" },
             {
                 "data": "offer_file",
                 "render": function (image) {
-                    return `<img src="../${image}" width="200">`
+                    return `<img class="zoom" src="../${image}" width="200">`
                 }
             },
             {

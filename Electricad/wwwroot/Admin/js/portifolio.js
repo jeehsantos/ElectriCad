@@ -18,7 +18,7 @@ function cargarDatatable() {
             {
                 "data": "port_file",
                 "render": function (image) {
-                    return `<img src="../${image}" width="200">`
+                    return `<img class="zoom" src="../${image}" width="200">`
                 }
             },
             {

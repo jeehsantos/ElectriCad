@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Electricad.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210717140042_initial")]
+    [Migration("20210718143054_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -17,7 +17,7 @@ namespace Electricad.Migrations
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("Relational:MaxIdentifierLength", 64)
-                .HasAnnotation("ProductVersion", "5.0.7");
+                .HasAnnotation("ProductVersion", "5.0.8");
 
             modelBuilder.Entity("Electricad.Data.About", b =>
                 {
@@ -25,9 +25,11 @@ namespace Electricad.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("about_desc")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("about_file")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.HasKey("Userid");
@@ -48,10 +50,11 @@ namespace Electricad.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<int>("descount")
+                    b.Property<int>("discount")
                         .HasColumnType("int");
 
                     b.Property<string>("offer_file")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.HasKey("id");
@@ -126,9 +129,11 @@ namespace Electricad.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("login")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("password")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.HasKey("id");

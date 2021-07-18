@@ -41,8 +41,8 @@ namespace Electricad.Migrations
                 {
                     id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
-                    login = table.Column<string>(type: "text", nullable: true),
-                    password = table.Column<string>(type: "text", nullable: true)
+                    login = table.Column<string>(type: "text", nullable: false),
+                    password = table.Column<string>(type: "text", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -54,8 +54,8 @@ namespace Electricad.Migrations
                 columns: table => new
                 {
                     Userid = table.Column<int>(type: "int", nullable: false),
-                    about_file = table.Column<string>(type: "text", nullable: true),
-                    about_desc = table.Column<string>(type: "text", nullable: true)
+                    about_file = table.Column<string>(type: "text", nullable: false),
+                    about_desc = table.Column<string>(type: "text", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -74,8 +74,8 @@ namespace Electricad.Migrations
                 {
                     id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
-                    descount = table.Column<int>(type: "int", nullable: false),
-                    offer_file = table.Column<string>(type: "text", nullable: true),
+                    discount = table.Column<int>(type: "int", nullable: false),
+                    offer_file = table.Column<string>(type: "text", nullable: false),
                     desc = table.Column<string>(type: "text", nullable: false),
                     Userid = table.Column<int>(type: "int", nullable: true)
                 },

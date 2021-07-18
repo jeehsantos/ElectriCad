@@ -10,9 +10,11 @@ using Electricad.Areas.Identity.Repository;
 using Microsoft.AspNetCore.Hosting;
 using System.IO;
 using Electricad.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Electricad.Controllers
 {
+    [Authorize]
     [Area("Admin")]
     public class PortfolioController : Controller
     {

@@ -13,7 +13,9 @@ namespace Electricad.Data
     {
         [Key]
         public int id { get; set; }
+        [Required(ErrorMessage = " The field Login is required")]
         public string login { get; set; }
+        [Required(ErrorMessage = " The field Password is required")]
         public string password { get; set; }
         public  About About { get; set; }
         public ICollection<Offers> Offers { get; set; } = new List<Offers>();
