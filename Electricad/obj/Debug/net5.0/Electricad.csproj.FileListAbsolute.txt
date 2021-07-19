@@ -375,3 +375,4 @@ C:\Users\jeehs\OneDrive\Documentos\GitHub\ElectriCad\Electricad\obj\Debug\net5.0
 C:\Users\jeehs\OneDrive\Documentos\GitHub\ElectriCad\Electricad\obj\Debug\net5.0\ref\Electricad.dll
 C:\Users\jeehs\OneDrive\Documentos\GitHub\ElectriCad\Electricad\obj\Debug\net5.0\Electricad.pdb
 C:\Users\jeehs\OneDrive\Documentos\GitHub\ElectriCad\Electricad\obj\Debug\net5.0\Electricad.genruntimeconfig.cache
+C:\Users\jeehs\OneDrive\Documentos\GitHub\ElectriCad\Electricad\obj\Debug\net5.0\Electricad.csprojAssemblyReference.cache

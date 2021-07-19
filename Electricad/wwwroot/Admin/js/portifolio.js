@@ -1,11 +1,11 @@
 ﻿var dataTable;
 
 $(document).ready(function () {
-    cargarDatatable();
+   loadDatatable();
 
 });
  
-function cargarDatatable() {
+function loadDatatable() {
    
     dataTable = $("#tblPortfolio").DataTable({
         "ajax": {
@@ -14,7 +14,7 @@ function cargarDatatable() {
             "datatype": "json"
         },
         "columns": [
-            { "data": "id", "width": "10%" },
+            { "data": "desc", "width": "10%" },
             {
                 "data": "port_file",
                 "render": function (image) {

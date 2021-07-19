@@ -22,13 +22,16 @@ namespace Electricad.Controllers
         private readonly IWorkContent _workContent;
         private readonly IWebHostEnvironment _hostingEnvironment;
         private readonly DataSectors _sectors;
-      
-            
-        public PortfolioController(IWebHostEnvironment hostingEnvironment, IWorkContent workContent, DataSectors sectors)
-        {
+
+        public ApplicationDbContext Db { get; }
+ 
+
+        public PortfolioController(ApplicationDbContext db, IWebHostEnvironment hostingEnvironment, IWorkContent workContent, DataSectors sectors)
+        { 
             _hostingEnvironment = hostingEnvironment;
             _workContent = workContent;
             _sectors = sectors;
+            Db = db;
            
         }
 
@@ -88,9 +91,20 @@ namespace Electricad.Controllers
         #region CALLING THE API
         [HttpGet]
         public IActionResult GetAll()
-        {
-            
-            return Json(new { data = _workContent.Portfolio.GetAll() });
+        { 
+            var labelPortfolio = (from p in Db.tb_portifolio
+                              join e in Db.tb_sectors
+                              on p.Sectorsid equals e.id
+                             
+                              select new
+                              {
+                                  id = p.id,
+                                  port_file = p.port_file,
+                                  desc = e.desc
+
+                              }).ToList();
+
+            return Json(new { data = labelPortfolio });
         }
 
 
