@@ -4,24 +4,15 @@ using Electricad.Utilities;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Identity.UI.V4.Pages.Account.Manage.Internal;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
-using SendGrid.Helpers.Mail;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Net;
-using System.Net.Mail;
-using System.Reactive;
 using System.Threading.Tasks;
-
-
-
 
 namespace Electricad.Controllers
 {
@@ -45,23 +36,22 @@ namespace Electricad.Controllers
             webHostEnvironment = _webHostEnvironment;
         }
 
-
         [HttpGet]
         public IActionResult Index()
         {
             var z = new ViewModel();
             z.Forms = new ContactForm();
             z.Reviews = db.tb_reviews.ToList();
-           var Movies = (from id in db.tb_about select id).FirstOrDefault();
             z.About = new About(); 
-            z.About = Movies;
+            z.About = (from id in db.tb_about select id).FirstOrDefault();
+            z.Portfolio = db.tb_portifolio.ToList();
             z.Offers = db.tb_offers.ToList();
             return View(z);
         }
 
         [HttpPost]
         public async Task<IActionResult> Index(ViewModel contact, IFormFile[] attachments)
-        {
+        {   //Option 2 send review
             if (contact.Forms.Subject == "2")
             {
                 if (ModelState.IsValid)
@@ -79,18 +69,17 @@ namespace Electricad.Controllers
                     m.Reviews = db.tb_reviews.ToList();
                     m.Offers = db.tb_offers.ToList();
                     ModelState.Clear();
-                    TempData["Msg"] = "Review sent successfully";
                     return View(m);
                 }
-            }
+            } //Otherwise send email
             else
             {
-                //IFormFile[] attachments List<IFormFile> postedFiles
                 var body = @contact.Forms.Content + "<br><br> Name: " + @contact.Forms.Name + "<br>Email: "
                 + @contact.Forms.Email + "<br>Address: " + @contact.Forms.Address + "<br>Phone: " + @contact.Forms.Phone + "<br>" +
                  "<br>";
                 var mailHelper = new MailSender(configuration);
                 List<string> fileNames = null;
+                //Check if there are files attached
                   if (attachments != null && attachments.Length > 0)
                    {
                        fileNames = new List<string>();

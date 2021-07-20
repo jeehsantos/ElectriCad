@@ -49,9 +49,9 @@ namespace Electricad.Controllers
         // GET: Offers/Create se nao esta comentado o codigo e porque estava igual o outro
         public IActionResult Create()
         {
-            var z = new ViewModel();
+            var z = new Portfolio();
             
-            z.Sectors = _sectors.FindAll();
+            z.Sector = _sectors.FindAll();
            
             return View(z);
         }

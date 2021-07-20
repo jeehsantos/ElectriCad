@@ -15,7 +15,7 @@ namespace Electricad.Data
         public User User { get; set; }
         [ForeignKey("Sector")]
         public int Sectorsid { get; set; }
-        public Sectors Sector { get; set; }
+        public ICollection<Sectors> Sector { get; set; }
         public Portfolio()
         {
 

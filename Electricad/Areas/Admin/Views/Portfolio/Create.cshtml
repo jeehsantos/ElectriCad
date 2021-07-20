@@ -1,4 +1,4 @@
-﻿@model Electricad.Models.ViewModel
+﻿@model Electricad.Data.Portfolio
 @{
     ViewData["Title"] = "Create";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
@@ -15,19 +15,19 @@
             <div class="col-sm-7 col-md-offset-3">
                 <div class="form-group row">
                     <div class="col-4">
-                        <label asp-for="Portfolio.id"></label>
+                        <label asp-for="id"></label>
                     </div>
                     <div class="col-8">
-                        <label asp-for="Portfolio.Sectorsid" class="control-label"></label>
-                        <select asp-for="Portfolio.Sectorsid" asp-items="@(new SelectList(Model.Sectors,"id", "desc"))"
+                        <label asp-for="Sectorsid" class="control-label"></label>
+                        <select asp-for="Sectorsid" asp-items="@(new SelectList(Model.Sector,"id", "desc"))"
                                 class="form-control"></select>
-                        <span asp-validation-for="Portfolio.Sectorsid" class="text-danger"></span>
+                        <span asp-validation-for="Sectorsid" class="text-danger"></span>
                     </div>
                 </div>
 
                 <div class="form-group row">
                     <div class="col-4">
-                        <label asp-for="Portfolio.port_file"></label>
+                        <label asp-for="port_file"></label>
                     </div>
                     <div class="col-8">
                         <input type="file" name="archivos" required="required" id="subidaArchivo" class="form-control" />

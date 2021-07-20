@@ -18,33 +18,41 @@
 
                 <div class="carousel-inner" role="listbox">
 
-                    <!-- Slide 1 -->
-                    <div class="carousel-item active" style="background-image: url('assets/img/slide/slide-1.1.jpg');
-    ">
-                        <div class="carousel-container">
-                            <div class="carousel-content container">
-                                <h2 class="animate__animated animate__fadeInDown">Welcome to <span>Electricad</span></h2>
-                                <p class="animate__animated animate__fadeInUp">For any electrical installation issues, electrical fault identification and repairs, or for emergency call-out services at any time.</p>
-                                <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Contact us Now</a>
-                            </div>
-                        </div>
-                    </div>
+                    <!--Offers sliders -->
                     @if (Model.Offers != null)
                     {
                         @foreach (var item in Model.Offers)
                         {
-                            <div class="carousel-item" style="background-image: url('@item.offer_file');">
-                                <div class="carousel-container">
-                                    <div class="carousel-content container">
-                                        <h2 class="animate__animated animate__fadeInDown">Electricad</h2>
-                                        <p class="animate__animated animate__fadeInUp">@item.desc</p>
-                                        <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">% @item.discount Discount !</a>
+                            var x = 0;
+                            //Check if it is the first slide to show the introduction with the image uploaded
+                            if (x == 0)
+                            {
+                                x++;
+                                <!-- Slide 1 -->
+                                <div class="carousel-item active" style="background-image: url('@item.offer_file');">
+                                    <div class="carousel-container">
+                                        <div class="carousel-content container">
+                                            <h2 class="animate__animated animate__fadeInDown">Welcome to <span>Electricad</span></h2>
+                                            <p class="animate__animated animate__fadeInUp">For any electrical installation issues, electrical fault identification and repairs, or for emergency call-out services at any time.</p>
+                                            <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Contact us Now</a>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            }
+                            else
+                            {
+                                x++;
+                                <div class="carousel-item" style="background-image: url('@item.offer_file');">
+                                    <div class="carousel-container">
+                                        <div class="carousel-content container">
+                                            <h2 class="animate__animated animate__fadeInDown">Electricad</h2>
+                                            <p class="animate__animated animate__fadeInUp">@item.desc</p>
+                                            <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">% @item.discount Discount !</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
                         }
-
-
                     }
 
                 </div>
@@ -69,35 +77,29 @@
                 <div class="col-lg-6 video-box">
                     <img src="@Html.DisplayFor(model => model.About.about_file)" class="img-fluid" alt="">
                 </div>
-
                 <div class="col-lg-6 d-flex flex-column justify-content-center about-content">
-
                     <div class="section-title">
                         <ul><a class="titlebtn">About us</a></ul> <br>
-                        <p>@Html.DisplayFor(model => model.About.about_desc)</p>
-
-
-                    <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-                        <div class="icon">
-                            <i class="bx bx-bulb"></i>
+                        <p>@Html.Raw(Model.About.about_desc)</p>
+                        <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+                            <div class="icon">
+                                <i class="bx bx-bulb"></i>
+                            </div>
+                            <h4 class="title"><a href="">Vision</a></h4>
+                            <p class="description">
+                                To see and understand the electrical issues as a client who wants to express and explain to an electrical technician
+                                In simple words and with the expertise of our staff find the solutions together.
+                            </p>
                         </div>
-                        <h4 class="title"><a href="">Vision</a></h4>
-                        <p class="description">
-                            To see and understand the electrical issues as a client who wants to express and explain to an electrical technician
-                            In simple words and with the expertise of our staff find the solutions together.
-                        </p>
+                        <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+                            <div class="icon"><i class="bx bx-bullseye"></i></div>
+                            <h4 class="title"><a href="">Mission</a></h4>
+                            <p class="description"> To bring all the experience passion and expertise to finish every job with the best quality and following the New Zealand standard and regulations to leave our clients satisfied</p>
+                        </div>
                     </div>
-
-                    <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-                        <div class="icon"><i class="bx bx-bullseye"></i></div>
-                        <h4 class="title"><a href="">Mission</a></h4>
-                        <p class="description"> To bring all the experience passion and expertise to finish every job with the best quality and following the New Zealand standard and regulations to leave our clients satisfied</p>
-                    </div>
-
                 </div>
             </div>
         </div>
-    </div>
     </section><!-- End About Us Section -->
     <!-- ====== Sevices section ======-->
     <section id="services" class="services">
@@ -182,126 +184,31 @@
             <div class="row" data-aos="fade-up" data-aos-delay="100">
                 <div class="col-lg-12 d-flex justify-content-center">
                     <ul id="portfolio-flters">
-                        <li data-filter="3">Residential</li>
-                        <li data-filter=".filter-cardes">Solar Panels</li>
-                        <li data-filter=".filter-web">Switchboards</li>
-                        <li data-filter=".filter-web">Commertial</li>
-                        <li data-filter=".filter-web">Design</li>
+                        <li data-filter=".1">Residential</li>
+                        <li data-filter=".4">Solar Panels</li>
+                        <li data-filter=".3">Switchboards</li>
+                        <li data-filter=".2">Commertial</li>
+                        <li data-filter=".5">Design</li>
                         <li data-filter="*" class="filter-active">All</li>
                     </ul>
                 </div>
             </div>
 
             <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
-
-                <div class="col-lg-4 col-md-6 portfolio-item 3">
-                    <div class="portfolio-wrap">
-                        <img src="assets/img/portfolio/portfolio.jpg" class="img-fluid" alt="">
-                        <div class="portfolio-info">
-                            <div class="portfolio-links">
-                                <a href="assets/img/portfolio/portfolio2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"></a>
-                                <a @Url.RouteUrl("portfolio-details.html") title="More Details"></a>
+                @foreach(var item in Model.Portfolio) { 
+                    <div class='col-lg-4 col-md-6 portfolio-item @item.Sectorsid'>
+                        <div class="portfolio-wrap">
+                            <img src='@item.port_file' class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <div class="portfolio-links">
+                                    <a href="#" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"></a>
+                                    <a @Url.RouteUrl("portfolio-details.html") title="More Details"></a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                    <div class="portfolio-wrap">
-                        <img src="assets/img/portfolio/portfolio3.jpg" class="img-fluid" alt="">
-                        <div class="portfolio-info">
-                            <div class="portfolio-links">
-                                <a href="assets/img/portfolio/portfolio4.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                                <a @Url.RouteUrl("Destination_Route") title="More Details"></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                    <div class="portfolio-wrap">
-                        <img src="assets/img/portfolio/solar.jpg" class="img-fluid" alt="">
-                        <div class="portfolio-info">
-                            <div class="portfolio-links">
-                                <a href="assets/img/portfolio/solar2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 2"><i class="bx bx-plus"></i></a>
-                                <a @Url.RouteUrl("Destination_Route") title="More Details"></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 portfolio-item filter-cardes" id="3">
-                    <div class="portfolio-wrap">
-                        <img src="assets/img/portfolio/solar3.jpg" class="img-fluid" alt="">
-                        <div class="portfolio-info">
-                            <div class="portfolio-links">
-                                <a href="assets/img/portfolio/switchboard.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 2"><i class="bx bx-plus"></i></a>
-                                <a @Url.RouteUrl("Destination_Route") title="More Details"></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                    <div class="portfolio-wrap">
-                        <img src="assets/img/portfolio/switchboard2.jpg" class="img-fluid" alt="">
-                        <div class="portfolio-info">
-                            <div class="portfolio-links">
-                                <a href="assets/img/portfolio/switchboard3.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 2"><i class="bx bx-plus"></i></a>
-                                <a @Url.RouteUrl("Destination_Route") title="More Details"></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                    <div class="portfolio-wrap">
-                        <img src="assets/img/portfolio/portfolio.jpg" class="img-fluid" alt="">
-                        <div class="portfolio-info">
-                            <div class="portfolio-links">
-                                <a href="assets/img/portfolio/solar.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 3"><i class="bx bx-plus"></i></a>
-                                <a @Url.RouteUrl("Destination_Route") title="More Details"></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                    <div class="portfolio-wrap">
-                        <img src="assets/img/portfolio/solar2.jpg" class="img-fluid" alt="">
-                        <div class="portfolio-info">
-                            <div class="portfolio-links">
-                                <a href="assets/img/portfolio/solar3.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 1"><i class="bx bx-plus"></i></a>
-                                <a @Url.RouteUrl("Destination_Route") title="More Details"></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                    <div class="portfolio-wrap">
-                        <img src="assets/img/portfolio/switchboard.jpg" class="img-fluid" alt="">
-                        <div class="portfolio-info">
-                            <div class="portfolio-links">
-                                <a href="assets/img/portfolio/switchboard2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 3"><i class="bx bx-plus"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                    <div class="portfolio-wrap">
-                        <img src="assets/img/portfolio/switchboard3.jpg" class="img-fluid" alt="">
-                        <div class="portfolio-info">
-                            <div class="portfolio-links">
-                                <a href="assets/img/portfolio/portfolio.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
+                }
             </div>
-
         </div>
     </section><!-- End Portfolio Section -->
     <!------- TESTIMONIALS ---------->

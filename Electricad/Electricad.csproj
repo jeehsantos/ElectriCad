@@ -7,9 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Repository\**" />
     <Compile Remove="wwwroot\Admin\NewFolder\**" />
+    <Content Remove="Repository\**" />
     <Content Remove="wwwroot\Admin\NewFolder\**" />
+    <EmbeddedResource Remove="Repository\**" />
     <EmbeddedResource Remove="wwwroot\Admin\NewFolder\**" />
+    <None Remove="Repository\**" />
     <None Remove="wwwroot\Admin\NewFolder\**" />
   </ItemGroup>
 
@@ -36,7 +40,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Repository\" />
     <Folder Include="wwwroot\Uploads\about\" />
     <Folder Include="wwwroot\Uploads\portfolio\" />
     <Folder Include="wwwroot\Uploads\sliders\" />

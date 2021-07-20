@@ -1,9 +1,4 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using Electricad.Models;
+﻿using Microsoft.EntityFrameworkCore;
 
 namespace Electricad.Data
 {
@@ -21,17 +16,5 @@ namespace Electricad.Data
         public DbSet<Portfolio> tb_portifolio { get; set; }
         public DbSet<Sectors> tb_sectors { get; set; }
 
-
-        /*
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<Review>(entity =>
-            {
-                entity.Property(e => e.name).IsRequired();
-                entity.Property(e => e.comment).IsRequired();
-                entity.Property(e => e.dateComment).IsRequired();
-            });
-        }*/
- 
     }
 }
