@@ -222,8 +222,7 @@
             var nextSibling = e.target.nextElementSibling
             nextSibling.innerText = name
         })
-
-        input.style.opacity = 0;
+ 
     });
 
     // Testimonials carousel (uses the Owl Carousel library)

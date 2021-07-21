@@ -18,7 +18,8 @@
     <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
     <link href="assets/vendor/aos/aos.css" rel="stylesheet">
     <link href="assets/vendor/boxicons/css/bootstrap-icons.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+   
     <!-- Template Main CSS File
     <link href="assets/css/style.css" rel="stylesheet">-->
     <!--<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />-->
@@ -30,8 +31,8 @@
     <section id="topbar" class="d-none d-lg-block">
         <div class="container clearfix">
             <div class="social-links float-right">
-                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="https://www.facebook.com/ElectriCad-400795126746237" target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="https://www.instagram.com/electricad_nz/" target="_blank" class="instagram"><i class="bx bxl-instagram"></i></a>
             </div>
             <div class="contact-info float-right">
                 <i class="icofont-phone"></i> <a href="tel:220270465">+64 22 027 0465</a>
@@ -54,7 +55,7 @@
                     <li><a href="#about">About Us</a></li>
                     <li><a href="#services">Services</a></li>
                     <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#experiences">Experiences</a></li>
+                    <li><a href="#testimonials">Experiences</a></li>
                     <li><a href="#contact">Contact Us</a></li>
                 </ul>
             </nav><!-- .nav-menu -->
@@ -78,13 +79,13 @@
                     </div>
                     <div class="col-lg- col-md- footer-info col-12 text-center">
                         <div class="social-links mt-6 text-center">
-                            <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-                            <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-                            <a href="#" class="google-plus"><i class="bx bx-envelope"></i></a>
+                            <a href="https://www.instagram.com/electricad_nz/" target="_blank" class="instagram"><i class="bx bxl-instagram"></i></a>
+                            <a href="https://www.facebook.com/ElectriCad-400795126746237" target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a>
+                            <a href="mailto:electricad2010@gmail.com" class="google-plus"><i class="bx bx-envelope"></i></a>
                         </div>
                         <div class="form-row">
                             <div class="col-lg- col-md-2 footer-links">
-                                <a href="#index.html"><h4>Home</h4></a>
+                                <a href="#"><h4>Home</h4></a>
                             </div>
                             <div class="col-lg- col-md-2 footer-links">
                                 <a href="#about"><h4>About Us</h4></a>
@@ -96,7 +97,7 @@
                                 <a href="#portfolio"><h4>Portfolio</h4></a>
                             </div>
                             <div class="col-lg- col-md-2 footer-links">
-                                <a href="#experiences"><h4>Experiences</h4></a>
+                                <a href="#testimonials"><h4>Experiences</h4></a>
                             </div>
                             <div class="col-lg- col-md-2 footer-links">
                                 <a href="#contact"><h4>Contact Us</h4></a>
@@ -112,14 +113,16 @@
             </div>
             <div class="credits">
                 Designed by <a href="#">the crew</a>
-               <a class="nav-link text-dark" asp-area="Admin" asp-controller="Account" asp-action="Logintest">Login</a>
+                <a class="nav-link text-dark" asp-area="Admin" asp-controller="Account" asp-action="Logintest">Login</a>
             </div>
         </div>
     </footer><!-- End Footer -->
 
-
+    @section Scripts {
+        <partial name="_ValidationScriptsPartial" />
+    }
     <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
- 
+
     <!-- Vendor JS Files -->
     <script src="assets/vendor/jquery/jquery.min.js"></script>
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -132,7 +135,7 @@
     <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
     <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
     <script src="assets/vendor/aos/aos.js"></script>
-
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>

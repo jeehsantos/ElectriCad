@@ -723,12 +723,12 @@ section {
             animation-delay: 0s;
             -webkit-animation: pulsate-btn 2s;
             animation: pulsate-btn 2s;
-            -webkit-animation-direction: forwards;
-            animation-direction: forwards;
+            -webkit-animation-direction: normal;
+            animation-direction: normal;
             -webkit-animation-iteration-count: infinite;
             animation-iteration-count: infinite;
-            -webkit-animation-timing-function: steps;
-            animation-timing-function: steps;
+            -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
             opacity: 1;
             border-radius: 50%;
             border: 5px solid rgba(247, 249, 250, 0.7);
@@ -1253,7 +1253,7 @@ Experiences
     font-size: 14px;
 }
 
-    .contact .php-email-form input::focus, .contact .php-email-form textarea::focus {
+    .contact .php-email-form input:focus, .contact .php-email-form textarea:focus {
         background-color: #ca4b42;
     }
 
@@ -1384,3 +1384,4 @@ Experiences
         #footer .credits a {
             color: #fff;
         }
+

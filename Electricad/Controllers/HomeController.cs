@@ -44,6 +44,7 @@ namespace Electricad.Controllers
             z.Reviews = db.tb_reviews.ToList();
             z.About = new About(); 
             z.About = (from id in db.tb_about select id).FirstOrDefault();
+          
             z.Portfolio = db.tb_portifolio.ToList();
             z.Offers = db.tb_offers.ToList();
             return View(z);
@@ -67,6 +68,7 @@ namespace Electricad.Controllers
                     var m = new ViewModel();
                     m.Forms = new ContactForm();
                     m.Reviews = db.tb_reviews.ToList();
+                    m.Portfolio = db.tb_portifolio.ToList();
                     m.Offers = db.tb_offers.ToList();
                     ModelState.Clear();
                     return View(m);
@@ -99,6 +101,8 @@ namespace Electricad.Controllers
                     var b = new ViewModel();
                     b.Forms = new ContactForm();
                     b.Reviews = db.tb_reviews.ToList();
+                    b.Portfolio = db.tb_portifolio.ToList();
+                    b.Offers = db.tb_offers.ToList();
                     ModelState.Clear();
                     TempData["Msg"] = "Email sent successfully";
                     return View(b);
@@ -111,6 +115,8 @@ namespace Electricad.Controllers
             var z = new ViewModel();
             z.Forms = new ContactForm();
             z.Reviews = db.tb_reviews.ToList();
+            z.Portfolio = db.tb_portifolio.ToList();
+            z.Offers = db.tb_offers.ToList();
             ModelState.Clear();
 
             return View(z);

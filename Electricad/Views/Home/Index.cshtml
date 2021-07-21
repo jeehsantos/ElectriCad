@@ -21,9 +21,10 @@
                     <!--Offers sliders -->
                     @if (Model.Offers != null)
                     {
+                        var x = 0;
                         @foreach (var item in Model.Offers)
                         {
-                            var x = 0;
+                            
                             //Check if it is the first slide to show the introduction with the image uploaded
                             if (x == 0)
                             {
@@ -34,7 +35,7 @@
                                         <div class="carousel-content container">
                                             <h2 class="animate__animated animate__fadeInDown">Welcome to <span>Electricad</span></h2>
                                             <p class="animate__animated animate__fadeInUp">For any electrical installation issues, electrical fault identification and repairs, or for emergency call-out services at any time.</p>
-                                            <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Contact us Now</a>
+                                            <a href="#contact" class="btn-get-started animate__animated animate__fadeInUp scrollto">Contact us Now</a>
                                         </div>
                                     </div>
                                 </div>
@@ -47,7 +48,7 @@
                                         <div class="carousel-content container">
                                             <h2 class="animate__animated animate__fadeInDown">Electricad</h2>
                                             <p class="animate__animated animate__fadeInUp">@item.desc</p>
-                                            <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">% @item.discount Discount !</a>
+                                            <a href="#contact" class="btn-get-started animate__animated animate__fadeInUp scrollto">% @item.discount Discount !</a>
                                         </div>
                                     </div>
                                 </div>
@@ -80,7 +81,7 @@
                 <div class="col-lg-6 d-flex flex-column justify-content-center about-content">
                     <div class="section-title">
                         <ul><a class="titlebtn">About us</a></ul> <br>
-                        <p>@Html.Raw(Model.About.about_desc)</p>
+                        <p>@Html.DisplayFor(model => model.About.about_desc )</p>
                         <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
                             <div class="icon">
                                 <i class="bx bx-bulb"></i>
@@ -117,7 +118,7 @@
                         </svg>
                     </div>
                     <h4 class="title"><a href="#">Residential</a></h4>
-                    <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
+                    <p class="description"> </p>
                 </div>
                 <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
                     <div class="icon">
@@ -126,7 +127,7 @@
                         </svg>
                     </div>
                     <h4 class="title"><a href="">Commercial</a></h4>
-                    <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
+                    <p class="description"></p>
                 </div>
                 <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
                     <div class="icon">
@@ -136,7 +137,7 @@
                         </svg>
                     </div>
                     <h4 class="title"><a href="">Switchboards</a></h4>
-                    <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
+                    <p class="description"></p>
                 </div>
                 <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
                     <div class="icon">
@@ -145,7 +146,7 @@
                         </svg>
                     </div>
                     <h4 class="title"><a href="">Solar Panels</a></h4>
-                    <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                    <p class="description"></p>
                 </div>
                 <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
                     <div class="icon">
@@ -155,7 +156,7 @@
                         </svg>
                     </div>
                     <h4 class="title"><a href="">Design</a></h4>
-                    <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
+                    <p class="description"></p>
                 </div>
 
             </div>
@@ -178,7 +179,7 @@
         <div class="container" data-aos="fade-up">
             <div class="section-title">
                 <ul> <a @Url.RouteUrl("index.html") class="titlebtn">Portfolio</a></ul><br>
-                <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea.</p>
+                <p>We think that trust should be earned through some pretty good results. </p>
             </div>
 
             <div class="row" data-aos="fade-up" data-aos-delay="100">
@@ -216,7 +217,7 @@
         <div class="container" data-aos="fade-up">
             <div class="section-title">
                 <ul><a href="index.html" class="tittle">Experiences</a></ul> <br>
-                <p>Our customers love us! Read what they have to say about Electrical services below.</p>
+                <p>Our customers love us! Read what they have to say about Electricad services below.</p>
             </div>
         </div>
 
@@ -269,10 +270,10 @@
                     <div class="info-box">
                         <i class="bx bx-map"></i>
                         <h3>Location</h3>
-                        <p>
-                            13 Pavilion Crescent, <br>
-                            Hillmorton Christchurch 8024, NZ
-                        </p>
+                        <p><a href="#">
+                                    13 Pavilion Crescent, <br>
+                                    Hillmorton Christchurch 8024, NZ
+                           </a></p>
                     </div>
                 </div>
 
@@ -293,14 +294,14 @@
                 </div>
 
                 <div class="col-lg-12" data-aos="fade-up" data-aos-delay="300">
-                    <form method="post" enctype="multipart/form-data" asp-controller="home" asp-action="index">
+                    <form method="post" id="form" enctype="multipart/form-data" asp-controller="home" asp-action="index">
                         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                         <div class="form-row">
 
                             <div class="col-lg-6 form-group">
-                                <input type="text" asp-for="Forms.Name" class="form-control" id="name" data-val="true" data-val-required="teste" placeholder="Full Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                                <input type="text" asp-for="Forms.Name" class="form-control" id="name" placeholder="Full Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
                                 <div class="validate"></div>
-                                <span class="text-danger field-validation-valid" datavalmsg-for="name" data-valmsg-replace="true"></span>
+                                <span class="text-danger field-validation-valid" id="name_error_message"  ></span>
                             </div>
                             <div class="col-lg-6 form-group">
                                 <input type="text" asp-for="Forms.Phone" class="form-control" id="phone" placeholder="Phone number" data-rule="minlen:4" data-msg="Please enter at least 9 chars" />
@@ -308,7 +309,7 @@
                             </div>
                             <div class="col-lg-6 form-group">
                                 <input type="email" class="form-control" asp-for="Forms.Email" id="email" placeholder="Email" data-rule="email" data-msg="Please enter a valid email" />
-                                <div class="validate"></div>
+                                <div class="validate" id="email_error_message"></div>
                             </div>
                             <div class="col-lg-6 form-group">
                                 <input type="text" asp-for="Forms.Address" class="form-control" id="address" placeholder="Address" data-rule="minlen:4" data-msg="Please enter at least 8 chars" />
@@ -332,57 +333,20 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <textarea class="form-control" asp-for="Forms.Content" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+                            <textarea class="form-control" asp-for="Forms.Content" id="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
                             <div class="validate"></div>
                         </div>
-                        <div class="mb-3">
+                        <div class="my-3">
                             <div class="loading">Loading</div>
                             <div class="error-message"></div>
-                            <div class="sent-message">Your message has been sent. Thank you!</div>
+                             <label id="message_error_message"></label>
                         </div>
                         <div class="text-center"><button class="submit-button" type="submit">Send Message</button></div>
                     </form>
                 </div>
-
             </div>
-
         </div>
-
     </section>
     <!-- End Contact Us Section -->
-    <!-- ====== MessengerChat -->
-    <!-- Messenger Chat plugin Code -->
-    <!-- Messenger Chat plugin Code -->
-    <div id="fb-root"></div>
-
-    <!-- Your Chat plugin code -->
-    <!-- Messenger Chat plugin Code -->
-    <div id="fb-root"></div>
-
-    <!-- Your Chat plugin code -->
-    <div id="fb-customer-chat" class="fb-customerchat">
-    </div>
-
-    <script>
-        var chatbox = document.getElementById('fb-customer-chat');
-        chatbox.setAttribute("page_id", "140700053244311");
-        chatbox.setAttribute("attribution", "biz_inbox");
-        window.fbAsyncInit = function () {
-            FB.init({
-                xfbml: true,
-                version: 'v11.0'
-            });
-        };
-
-        (function (d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) return;
-            js = d.createElement(s); js.id = id;
-            js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
-    </script>
-
-    <!-- === Messenger chat end -->
 
 </main><!-- End #main -->

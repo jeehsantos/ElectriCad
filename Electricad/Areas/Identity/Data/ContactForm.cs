@@ -21,8 +21,8 @@ namespace Electricad.Models
         public  string Email { get; set; }
 
          public  string Address { get; set; }
-         
-         public  string Subject { get; set; }
+        [Required(ErrorMessage = " The field Content is required")]
+        public  string Subject { get; set; }
          [Required(ErrorMessage = " The field Content is required")]
          public  string Content { get; set; }
 
