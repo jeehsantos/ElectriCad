@@ -47,7 +47,7 @@
                                     <div class="carousel-container">
                                         <div class="carousel-content container">
                                             <h2 class="animate__animated animate__fadeInDown">Electricad</h2>
-                                            <p class="animate__animated animate__fadeInUp">@item.desc</p>
+                                            <p class="animate__animated animate__fadeInUp">@Html.Raw(item.desc)</p>
                                             <a href="#contact" class="btn-get-started animate__animated animate__fadeInUp scrollto">% @item.discount Discount !</a>
                                         </div>
                                     </div>
@@ -81,7 +81,7 @@
                 <div class="col-lg-6 d-flex flex-column justify-content-center about-content">
                     <div class="section-title">
                         <ul><a class="titlebtn">About us</a></ul> <br>
-                        <p>@Html.DisplayFor(model => model.About.about_desc )</p>
+                        <p>@Html.Raw(Model.About.about_desc )</p>
                         <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
                             <div class="icon">
                                 <i class="bx bx-bulb"></i>
@@ -118,7 +118,10 @@
                         </svg>
                     </div>
                     <h4 class="title"><a href="#">Residential</a></h4>
-                    <p class="description"> </p>
+                    <p class="description">
+                        We can handle any and all of your home electrical needs.
+                        Whether you are constructing a new house, remodeling a bathroom or kitchen, or just installing a new light fitting.
+                    </p>
                 </div>
                 <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
                     <div class="icon">
@@ -127,7 +130,10 @@
                         </svg>
                     </div>
                     <h4 class="title"><a href="">Commercial</a></h4>
-                    <p class="description"></p>
+                    <p class="description">
+                        For your office, warehouse, factory, or public facility, we can manage all of your business needs.
+                        Everything from emergency response to the service and maintenance of your electrical infrastructure.
+                    </p>
                 </div>
                 <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
                     <div class="icon">
@@ -137,7 +143,10 @@
                         </svg>
                     </div>
                     <h4 class="title"><a href="">Switchboards</a></h4>
-                    <p class="description"></p>
+                    <p class="description">
+                        Commercial and industrial establishments rely on switchboards to securely transmit power across their operations.
+                        Electricad can inspect, install a new one and mantenance.
+                    </p>
                 </div>
                 <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
                     <div class="icon">
@@ -146,7 +155,11 @@
                         </svg>
                     </div>
                     <h4 class="title"><a href="">Solar Panels</a></h4>
-                    <p class="description"></p>
+                    <p class="description">
+                        Renewable energy systems such as solar PV panels may be installed on residential houses, business buildings,
+                        and farmland. Installing solar PV systems is straightforward and does not need obtaining a resource or construction
+                        permit.
+                    </p>
                 </div>
                 <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
                     <div class="icon">
@@ -156,7 +169,7 @@
                         </svg>
                     </div>
                     <h4 class="title"><a href="">Design</a></h4>
-                    <p class="description"></p>
+                    <p class="description">Electricad can build a complete design & install service for your house, construction and industry.</p>
                 </div>
 
             </div>
@@ -188,7 +201,7 @@
                         <li data-filter=".1">Residential</li>
                         <li data-filter=".4">Solar Panels</li>
                         <li data-filter=".3">Switchboards</li>
-                        <li data-filter=".2">Commertial</li>
+                        <li data-filter=".2">Commercial</li>
                         <li data-filter=".5">Design</li>
                         <li data-filter="*" class="filter-active">All</li>
                     </ul>

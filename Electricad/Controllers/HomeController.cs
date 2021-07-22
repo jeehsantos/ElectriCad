@@ -67,6 +67,8 @@ namespace Electricad.Controllers
                     await db.SaveChangesAsync();
                     var m = new ViewModel();
                     m.Forms = new ContactForm();
+                    m.About = new About();
+                    m.About = (from id in db.tb_about select id).FirstOrDefault();
                     m.Reviews = db.tb_reviews.ToList();
                     m.Portfolio = db.tb_portifolio.ToList();
                     m.Offers = db.tb_offers.ToList();
@@ -100,6 +102,8 @@ namespace Electricad.Controllers
                     ViewBag.msg = "Sent Mail Successfully";
                     var b = new ViewModel();
                     b.Forms = new ContactForm();
+                    b.About = new About();
+                    b.About = (from id in db.tb_about select id).FirstOrDefault();
                     b.Reviews = db.tb_reviews.ToList();
                     b.Portfolio = db.tb_portifolio.ToList();
                     b.Offers = db.tb_offers.ToList();
@@ -114,6 +118,8 @@ namespace Electricad.Controllers
             }
             var z = new ViewModel();
             z.Forms = new ContactForm();
+            z.About = new About();
+            z.About = (from id in db.tb_about select id).FirstOrDefault();
             z.Reviews = db.tb_reviews.ToList();
             z.Portfolio = db.tb_portifolio.ToList();
             z.Offers = db.tb_offers.ToList();
